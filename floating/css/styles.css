@@ -306,7 +306,7 @@ hr { margin: 20px 0px; border-color: #727878; opacity: 0.2; filter:alpha(opacity
 #top-menu.container {
   text-align: center;
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 0px;
   color: #666;
   width: 100%;
   max-width: 100%;
@@ -342,7 +342,7 @@ border-bottom: 2px rgb(13, 116, 112) solid;
   color: rgb(13, 116, 112);
 }
 
-#profile.container { text-align: center; padding-top: 10px; padding-bottom: 10px; }
+#profile.container { text-align: center; padding-top: 0px; padding-bottom: 10px; }
 
 #profile .row > div .image { width: 100%; width: 220px; height: 220px; display:inline-block;}
 #profile .row > div .image.circular {
@@ -458,7 +458,7 @@ img.profilepic {
 	padding: 15px;
 }
 
-#contact { padding-bottom: 200px; }
+#contact { padding-bottom: 50px; }
 #contact h2, #contact .row * { color: #FFFFFF; }
 #contact a { display: block; line-height: 32px; margin-bottom: 20px; opacity: 0.6; filter:alpha(opacity=60);  }
 #contact a .icon { float: left; margin-right: 20px; }

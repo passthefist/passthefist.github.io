@@ -280,6 +280,7 @@ h1,h4 { font-weight: 700; margin-bottom: 5px; }
 h2,h3 { font-weight: 300; color: #22A39F; }
 h2 { font-size: 54px; text-align: center; }
 h3 { font-size: 28px; }
+h4 { color: #666; }
 
 p.lead { text-align: center; color: #727878; }
 p.lead a { color: #FFFFFF; text-decoration: underline; }
@@ -301,6 +302,7 @@ hr { margin: 20px 0px; border-color: #727878; opacity: 0.2; filter:alpha(opacity
 
 .background-white { background: #FFFFFF; }
 .background-gray { background: #434242; }
+.background-tan { background: #F3EFE0; }
 .container { max-width: 1280px; padding: 40px 180px; }
 
 #top-menu.container {
@@ -342,7 +344,22 @@ border-bottom: 2px rgb(13, 116, 112) solid;
   color: rgb(13, 116, 112);
 }
 
-#profile.container { text-align: center; padding-top: 10px; padding-bottom: 10px; }
+#profile.container {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px; 
+  width: 100%;
+  max-width: 100%;
+}
+
+#profile .row {
+  max-width: 710px;
+  margin: auto;
+}
+
+#profile h2 {
+  margin-top: 0px;
+}
 
 #profile .row > div .image { width: 100%; width: 220px; height: 220px; display:inline-block;}
 #profile .row > div .image.circular {
@@ -353,8 +370,8 @@ border-bottom: 2px rgb(13, 116, 112) solid;
 }
 
 img.profilepic {
-  width: 150px;
-  height: 150px;
+  width: 250px;
+  height: 250px;
 }
 
 .text-mask {
@@ -365,6 +382,42 @@ img.profilepic {
 
 .animatepride {
   color: #7702a5;
+}
+
+#experiences.container {
+  padding-top: 15px;
+}
+
+#experiences .profilepic {
+  width: 250px;
+  height: 150px;
+}
+
+#experiences .center-text {
+  text-align: center;
+}
+
+#experiences .row {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+#experiences .row:first-child {
+  margin-top: 5px;
+}
+
+#experiences .row:last-child {
+  margin-bottom: 0px;
+}
+
+/* #experiences h3 {
+  color: #666;
+  font-weight: 600;
+  margin-top: 0px;
+} */
+
+#experiences h3 {
+  margin-top: 0px;
 }
 
 #experiences .experience { margin-bottom: 20px; }
@@ -458,7 +511,7 @@ img.profilepic {
 	padding: 15px;
 }
 
-#contact { padding-bottom: 200px; }
+#contact { padding-bottom: 50px; }
 #contact h2, #contact .row * { color: #FFFFFF; }
 #contact a { display: block; line-height: 32px; margin-bottom: 20px; opacity: 0.6; filter:alpha(opacity=60);  }
 #contact a .icon { float: left; margin-right: 20px; }

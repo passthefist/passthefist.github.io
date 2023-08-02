@@ -280,8 +280,9 @@ h1,h4 { font-weight: 700; margin-bottom: 5px; }
 h2,h3 { font-weight: 300; color: #22A39F; }
 h2 { font-size: 54px; text-align: center; }
 h3 { font-size: 28px; }
+h4 { color: #666; }
 
-p.lead { text-align: center; color: #727878; }
+p.lead { text-align: center; color: #727878; font-size: 25px;}
 p.lead a { color: #FFFFFF; text-decoration: underline; }
 p.lead a:hover { text-decoration: none; }
 ul.no-bullets { list-style-type: none; margin: 0px; padding: 0px; }
@@ -301,6 +302,7 @@ hr { margin: 20px 0px; border-color: #727878; opacity: 0.2; filter:alpha(opacity
 
 .background-white { background: #FFFFFF; }
 .background-gray { background: #434242; }
+.background-tan { background: #F3EFE0; }
 .container { max-width: 1280px; padding: 40px 180px; }
 
 #top-menu.container {
@@ -342,7 +344,21 @@ border-bottom: 2px rgb(13, 116, 112) solid;
   color: rgb(13, 116, 112);
 }
 
-#profile.container { text-align: center; padding-top: 10px; padding-bottom: 10px; }
+#profile.container {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px; 
+  width: 100%;
+  max-width: 100%;
+}
+
+#profile .row {
+  margin: auto;
+}
+
+#profile h2 {
+  margin-top: 0px;
+}
 
 #profile .row > div .image { width: 100%; width: 220px; height: 220px; display:inline-block;}
 #profile .row > div .image.circular {
@@ -353,8 +369,9 @@ border-bottom: 2px rgb(13, 116, 112) solid;
 }
 
 img.profilepic {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
+  box-shadow: 0px 0px 1px;
 }
 
 .text-mask {
@@ -365,6 +382,41 @@ img.profilepic {
 
 .animatepride {
   color: #7702a5;
+}
+
+#experiences.container {
+  padding-top: 15px;
+}
+
+#experiences .center-text {
+  text-align: center;
+}
+
+#experiences .row {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+#experiences .row:first-child {
+  margin-top: 5px;
+}
+
+#experiences .row:last-child {
+  margin-bottom: 0px;
+}
+
+/* #experiences h3 {
+  color: #666;
+  font-weight: 600;
+  margin-top: 0px;
+} */
+
+#experiences h3 {
+  margin-top: 0px;
+}
+
+#experiences p {
+  font-size: 19px;
 }
 
 #experiences .experience { margin-bottom: 20px; }
@@ -458,11 +510,68 @@ img.profilepic {
 	padding: 15px;
 }
 
-#contact { padding-bottom: 200px; }
+#projects h3 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+#projects h4 { font-weight: 600;}
+#projects h4.magenta {
+  color: #ab1c94;
+}
+
+#projects h4.deepblue {
+  color: #604dc0;
+}
+
+#projects h4.burntorange {
+  color: #c86a15;
+}
+
+#projects h4.seafoam {
+  color: #1cab7e;
+}
+
+#projects h4.deepred {
+  color: #d51414;
+}
+
+#projects .cta {
+  text-align: center;
+}
+
+#projects .cta.row > div {
+  margin-bottom: 0px;
+}
+
+#projects .button {
+  background-color:#22A39F;
+  color: #eee;
+  border-radius: 7px;
+  font-size: 30px;
+  box-shadow: 2px 2px #16827e;
+  text-shadow: -1px -1px #16827e;
+}
+
+#projects .button:hover {
+  opacity: 0.9;
+}
+
+#contact { padding-bottom: 50px; }
 #contact h2, #contact .row * { color: #FFFFFF; }
 #contact a { display: block; line-height: 32px; margin-bottom: 20px; opacity: 0.6; filter:alpha(opacity=60);  }
 #contact a .icon { float: left; margin-right: 20px; }
 #contact a:hover { opacity: 1; filter:alpha(opacity=100); text-decoration: none; }
+
+#contact iframe {
+  display: block;
+  width: 640px;
+  height: 800px;
+  margin: 0px auto;
+  background-color: #aaa;
+  transform: scale(0.85);
+  margin-top: -50px;
+  border-radius: 5px;
+}
 
 .opl {
 	position:absolute;

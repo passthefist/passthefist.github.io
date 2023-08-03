@@ -386,6 +386,7 @@ img.profilepic {
 
 #experiences.container {
   padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 #experiences .center-text {
@@ -394,7 +395,7 @@ img.profilepic {
 
 #experiences .row {
   margin-top: 25px;
-  margin-bottom: 25px;
+  margin-bottom: 5px;
 }
 
 #experiences .row:first-child {
@@ -403,6 +404,7 @@ img.profilepic {
 
 #experiences .row:last-child {
   margin-bottom: 0px;
+  margin-top: 0px;
 }
 
 /* #experiences h3 {
@@ -548,7 +550,7 @@ img.profilepic {
   color: #eee;
   border-radius: 7px;
   font-size: 30px;
-  box-shadow: 2px 2px #16827e;
+  box-shadow: 2px 2px #93c7c5;
   text-shadow: -1px -1px #16827e;
 }
 
@@ -599,7 +601,7 @@ img.profilepic {
 
 	.fixed .navbar { top: 0px; }
 
-	.container { padding: 60px 20px; min-width: 280px; }
+	.container { padding: 60px 20px; min-width: 280px; background-color: red;}
 	.hidden-phone { display: none; }
 	ul.hidden-phone { display: none; }
 	.hidden-phone li { display: none; }

@@ -184,8 +184,6 @@ border-bottom: 2px rgb(13, 116, 112) solid;
   color: white;
 }
 
-@media screen and (min-width: 1200px) {   width: calc(75% - 90px); }
-
 #experiences .profilepic {
   max-height: 300px;
   min-height: 150px;
@@ -550,4 +548,93 @@ border-bottom: 2px rgb(13, 116, 112) solid;
   padding: 15px;
   border-bottom: 2px solid #aaa;
   margin-bottom: 10px;
+}
+
+#courses .transition, #courses p, #courses ul li i:before, ul li i:after {
+  transition: all 0.3s;
+}
+
+#courses .accordion-content {
+  color: #333;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  max-height: 250px;
+  will-change: max-height;
+  contain: layout;
+  display: inline-block;
+  opacity: 1;
+  transform: translate(0, 0);
+  margin-top: 5px;
+  margin-bottom: 15px;
+  padding: 0 15px;
+  transition: .3s opacity, .6s max-height;
+  z-index: 2;
+}
+
+#courses ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#courses ul li {
+  position: relative;
+  overflow: hidden;
+  padding-left: 15px;
+  margin: 0;
+  /*padding-bottom: 4px;*/
+  /*padding-top: 18px;*/
+  background: #ddd;
+  border: 1px solid #eee;
+  -webkit-tap-highlight-color: transparent;
+}
+#courses ul li + li {
+  margin-top: 15px;
+}
+#courses ul li:last-of-type {
+  padding-bottom: 0;
+}
+#courses ul li i {
+  position: absolute;
+  transform: translate(-6px, 0);
+  margin-top: 28px;
+  right: 15px;
+}
+#courses ul li i:before, ul li i:after {
+  content: "";
+  position: absolute;
+  background-color: #cc071e;
+  width: 3px;
+  height: 9px;
+}
+#courses ul li i:before {
+  transform: translate(-2px, 0) rotate(45deg);
+}
+#courses ul li i:after {
+  transform: translate(2px, 0) rotate(-45deg);
+}
+#courses ul li input[type=checkbox] {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  touch-action: manipulation;
+}
+#courses ul li input[type=checkbox]:checked ~ h2 {
+  color: #000;
+}
+#courses ul li input[type=checkbox]:checked ~ .accordion-content {
+  /*margin-top: 0;*/
+  max-height: 0;
+  transition: .3s;
+  opacity: 0;
+  /*transform: translate(0, 50%);*/
+}
+#courses ul li input[type=checkbox]:checked ~ i:before {
+  transform: translate(2px, 0) rotate(45deg);
+}
+#courses ul li input[type=checkbox]:checked ~ i:after {
+  transform: translate(-2px, 0) rotate(-45deg);
 }

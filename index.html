@@ -9,9 +9,31 @@
         <script src="https://kit.fontawesome.com/4bdd90fce5.js" crossorigin="anonymous"></script>
         <!-- Bootstrap core CSS -->
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-        <link href="./css/styles.css" rel="stylesheet" type="text/css">
+        <link href="./css/initial_styles.css" rel="stylesheet" type="text/css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Rubik&display=swap" rel="stylesheet">
+        <script type="module">
+            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            if (isMobile) {
+                var head = document.getElementsByTagName('HEAD')[0];
+                var link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = './css/mobile_styles.css';
+                head.appendChild(link);
+            } else {
+                var head = document.getElementsByTagName('HEAD')[0];
+                var link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = './css/styles.css';
+                head.appendChild(link);
+            }
+        </script>
     </head>
-    <body data-spy="scroll" data-target="#navbar-example" data-twttr-rendered="true" class="fixed">
+    <body data-spy="scroll" data-target="#navbar-example" data-twttr-rendered="true" class="fixed ">
+        <div id="loading-blockout"></div>
         <div id="top-menu" class="container background-white">
             <div class="right">
                 <a href="/courses">Courses</a>
@@ -22,28 +44,30 @@
         </div>
         <div id="profile" class="container style-a background-white">
             <div class = 'row'>
-                <div class="col-md-8 col-md-offset-2">
-                    <h2>An Affordable Alternative to Coding Bootcamps</h2>
-                    <hr>
+                <div class="col-md-12">
+                    <h1>An Affordable Alternative to Coding Bootcamps</h1>
                 </div>
-                <div class="col-md-8 col-md-offset-2">
+                <div class="col-md-10 col-md-offset-1 col-sm-12">
                     <p class="lead">
                         Learn the same tech skills with one-on-one education that's catered to your learning style and schedule.
                     </p>
                 </div>
             </div>
         </div>
-        <div id="experiences" class="container background-tan">
+        <div id="experiences" class="container">
             <div class = 'row'>
-                <div class="col-md-9">
+                <div class="col-md-9 col-sm-12">
                     <p>
                         Hi! I’m Robin (They/Them) a tech educator and career mentor with over 15 years of experience as a software developer across the industry.
                         I believe learning tech skills should be more accessible, and I want to use my experience to provide an alternative path for people
-                        looking to shift their careers. Through project oriented courses and guided self-learning, you'll build more than just coding skills.
+                        looking to shift their careers. Through project oriented courses, personalized lessons, and guided self-learning, you'll build more than just coding skills.
                     </p>
                 </div>
-                <div class="col-md-3" style="text-align: center;">
-                    <img src="img/headshot.jpg" class="profilepic"/>
+                <div class="col-md-3 col-sm-12">
+                    <div class="profilepic">
+                        <!-- <div class="profilepic-blur"></div>
+                        <div class="profilepic-img"></div> -->
+                    </div>
                 </div>
             </div>
             <div class = 'row cta'>
@@ -70,78 +94,107 @@
             -->
         </div>
         <div id="projects" class="container background-white">
-            <div class = 'row'>
-                <div class="col-md-12" style="text-align: center;">
-                    <h3>
-                        More About My Approach
-                    </h3>
+            <div class="tab-wrap">
+                <input type="radio" id="tab1" name="tabGroup1" class="tab" checked>
+                <label for="tab1"><h3>My Approach</h3></label>
+                <input type="radio" id="tab2" name="tabGroup1" class="tab">
+                <label for="tab2"><h3>Courses Overview</h3></label>
+                <input type="radio" id="tab3" name="tabGroup1" class="tab">
+                <label for="tab3"><h3>Pricing</h3></label>
+                <div class="tab__content" data-type="Approach">
+                    <div class = 'row'>
+                        <div class="col-md-6">
+                            <h4 class="magenta">Build a Project Portfolio</h4>
+                            <p class="">
+                                If you ask most devs, they'll say that a strong set of public projects is a better marker for skills than a degree or certification.
+                                With project oriented courses, you'll learn through practical experience and end with your own personal to site to show off
+                                what you've built.
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="deepblue">Neurodivergent Friendly</h4>
+                            <p class="">
+                                As an ADHDer myself, I know the strengths and challenges that come with neurodivergence. Using a more personalized approach,
+                                I’ll teach to your learning style with lessons made to work how you do along with your management tools, at your own pace.
+                            </p>
+                        </div>
+                    </div>
+                    <div class = 'row'>
+                        <div class="col-md-6">
+                            <h4 class="seafoam">Learn Popular Programming Languages</h4>
+                            <p class="">
+                                Javascript and CSS drive the web frontend and Python is used everywhere from backend web services to data science and lab research. They're
+                                two of the most popular languages, and knowing both will give you the flexibility to find more opportunities
+                                than focusing on a single area.
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="burntorange">Interview Confidently</h4>
+                            <p class="">
+                                Frankly, the tech hiring process can really suck. Navigating it is a skillset separate from any coding experience that
+                                requires its own practice. Learn techniques for time-pressured coding challenges, how to talk the talk in interviews,
+                                and feel more confident applying to jobs.
+                            </p>
+                        </div>
+                    </div>
+                    <div class = 'row'>
+                        <div class="col-md-6">
+                            <h4 class="deepred">Hack Like a Pro</h4>
+                            <p class="">
+                                There's a lot more to software development than learning languages and building apps. Getting comfortable with tools devs
+                                use like the command line console and code editors will make writing code easier and more fun, while knowing how networking
+                                and operating systems work will help you understand software at a deeper level.
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="magenta">Guided Self-Learning</h4>
+                            <p class="">
+                                Getting stuck on a problem and not knowing the answer happens all the time in software development. It's an open secret that
+                                knowing how to Google stuff and find the information you need is part of the job. With courses that include self-learning,
+                                you'll practice this kind of searching while building problem solving skills. 
+                            </p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class = 'row'>
-                <div class="col-md-6">
-                    <h4 class="magenta">Build a Project Portfolio</h4>
-                    <p class="">
-                        If you ask most devs, they'll say that a strong set of public projects is a better marker for skills than a degree or certification.
-                        With project oriented courses, you'll learn through practical experience and end with your own personal to site to show off
-                        what you've built.
-                    </p>
+                <div class="tab__content">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <p style="text-align: left;">
+                                There's a lot to learn with software development, so to make it less overwhelming and more flexible,
+                                courses are broken down into smaller blocks. Each block has both a learning and a project
+                                component, so you'll gain practical experience while building something as you go. By having shorter
+                                focused blocks that end with a completed project, there's a quicker sense of progress and
+                                positive reinforcement.
+                            </p>
+                            <p style="text-align: left;">
+                                Though the blocks build on each other, they don't have to be done in the same order or can be skipped
+                                altogether. If there's a only few things you're interested in that's totally cool - you can focus on
+                                just what you want.
+                            </p>
+                        </div>
+                        <div class="col-md-7">
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <h4 class="deepblue">Neurodivergent Friendly</h4>
-                    <p class="">
-                        As an ADHDer myself, I know the strengths and challenges that come with neurodivergence. Using a more personalized approach,
-                        I’ll teach to your learning style with lessons made to work how you do along with your management tools, at your own pace.
-                    </p>
-                </div>
-            </div>
-            <div class = 'row'>
-                <div class="col-md-6">
-                    <h4 class="seafoam">Learn Popular Programming Languages</h4>
-                    <p class="">
-                        Javascript and CSS drive the web frontend and Python is used everywhere from backend web services to data science and lab research. They're
-                        two of the most popular languages, and knowing both will give you the flexibility to find more opportunities
-                        than focusing on a single area.
-                    </p>
-                </div>
-                <div class="col-md-6">
-                    <h4 class="burntorange">Interview Confidently</h4>
-                    <p class="">
-                        Frankly, the tech hiring process can really suck. Navigating it is a skillset separate from any coding experience that
-                        requires its own practice. Learn techniques for time-pressured coding challenges, how to talk the talk in interviews,
-                        and feel more confident applying to jobs.
-                    </p>
-                </div>
-            </div>
-            <div class = 'row'>
-                <div class="col-md-6">
-                    <h4 class="deepred">Hack Like a Pro</h4>
-                    <p class="">
-                        There's a lot more to software development than learning languages and building apps. Getting comfortable with tools devs
-                        use like the command line console and code editors will make writing code easier and more fun, while knowing how networking
-                        and operating systems work will help you understand software at a deeper level.
-                    </p>
-                </div>
-                <div class="col-md-6">
-                    <h4 class="magenta">Guided Self-Learning</h4>
-                    <p class="">
-                        Getting stuck on a problem and not knowing the answer happens all the time in software development. It's an open secret that
-                        knowing how to Google stuff and find the information you need is part of the job. With courses that include self-learning,
-                        you'll practice this kind of searching while building problem solving skills. 
-                    </p>
-                </div>
-            </div>
-
-            <div class = 'row cta'>
-                <div class="col-md-12">
-                    <span class="button">Check Out a Course Overview</span>
+                <div class="tab__content" style="text-align: center;">
+                <h1>This is in an early release state, so it's all free right now :)</h1>
+                <p class="lead">
+                    I'm currently testing and verifying the curriculum, so I'm looking for people who are willing to commit
+                    to 12 weeks of tech training with an understanding that I'll be figuring some things out with you. while
+                    I think the foundations are here, some stuff needs polish and I want to know where the gaps are.
+                </p>
+                <p class="lead">
+                    <a href="#contact">
+                        Contact me below if you're interested in learning basic tech skills while helping me flesh out the curriculum.
+                    </a>
+                </p>
                 </div>
             </div>
         </div>
-
         <div class="background-gray">
             <div id="contact" class="container">
                 <h2>Contact</h2>
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeMLHtksJ6AroB5MWdWagY3GpRdg_MADZKk-nE60kgoZFrYKw/viewform?embedded=true" width="640" height="687" frameborder="0" marginheight="0" marginwidth="0">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeMLHtksJ6AroB5MWdWagY3GpRdg_MADZKk-nE60kgoZFrYKw/viewform?embedded=true" width="900" height="679" frameborder="0" marginheight="0" marginwidth="0">
                     Loading…
                 </iframe>
                 <hr>
@@ -166,5 +219,5 @@
                 <hr>
             </div>
         </div>
-     </body>
+    </body>
 </html>

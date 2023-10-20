@@ -1,0 +1,121 @@
+<html>
+    <meta name="robots" content="noindex,nofollow">
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+        <style>
+            body {
+                background-image: url(img/parchment.jpg);
+                background-size: auto 100%;
+            }
+            .container {
+                padding: 20px;
+                padding-bottom: 550px;
+                margin: 0px auto;
+                font-family: 'Handlee', cursive;
+                color: #510808;
+                min-height: 100%;
+            }
+            .container p {
+                opacity: 0;
+                transition: opacity 1.2s;
+                font-size: 48px;
+                font-weight: bold;
+            }
+            
+            .scroll-cta {
+                position: absolute;
+                bottom: 30px;
+                left: 0px;
+                right: 0px;
+                text-align: center;
+                padding: 15px;
+                font-size: 68px;
+                transition: opacity 1s;
+                opacity: 1;
+                color: #101054;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="scroll-cta">
+                <span>~ Scroll Down To Read ~</span>
+            </div>
+            <p id="first">
+                I’m burying the person I never had the chance to be and the holes in my heart are leaking.
+            </p>
+            <p id="second">
+                I miss her even though I barely knew her, but I hope letting her go will help me to move on
+                with my own life. I wish I could have known who she was. I wish I could have given her the
+                comfort she needed. I wish she could be a part of my life, that we could share it together.
+                Instead I’m haunted by a ghost that can’t find rest, who’s hanging on to my life in one last
+                desperate bid to leave a mark on the world. But living with her is too painful, knowing she’s
+                already dead, that this person I’ve found is a ghost.
+            </p>
+            <p id="third">
+                And for a ghost, she’s so heavy.
+            </p>
+            <p id="fourth">
+                She weighs on my mind, and in my body, and is a burden on my life. We share the same longing
+                ache of being separated at birth, but I’m still here, and as much as I wish to give my own
+                life for hers sometimes, I know you can’t bring back the dead.
+            </p>
+            <p id="fifth">
+                I have a life of my own to lead.
+            </p>
+            <p id="sixth">
+                But I can keep her memory. 
+            </p>
+            <p id="seventh">
+                I can let people know she was here and never given the chance to thrive, to at least honor
+                her that way. And I think that’s what she’s telling me, that she can be put to rest if
+                people just know about her, that they know her story. But I don’t know if I believe that,
+                I don’t know if she can be put to rest before she has a chance to breathe at least once,
+                and I do know she deserves at least that. Mostly, I want to join her in death, because then
+                at least we’ll be together, and I don’t know if I can live without her now that we’ve met.
+            </p>
+            <p id="eighth">
+                Or maybe, I’m already a ghost too, making his way through a different afterlife.
+            </p>
+            <p id="ninth">
+                Or maybe, I can learn to find happiness without hope instead, filling the space she left behind with brightness from elsewhere,
+            </p>
+            <p id="tenth">
+                because the ghost of hope is a false promise worse than no hope at all.
+            </p>
+        </div>
+    </body>
+    <script>
+        function reveal(tag) {
+            tag.style = "opacity:1";
+        };
+
+        reveal(first)
+
+        let breakpoints = {
+            1: second,
+            600: third,
+            1000: fourth,
+            1350: fifth,
+            1700: sixth,
+            2020: seventh,
+            2800: eighth,
+            3050: ninth,
+            3300: tenth
+        }
+
+        window.addEventListener("scroll", function(e) {
+            document.querySelector(".scroll-cta").style = "opacity:0";
+
+            console.log(document.body.scrollTop);
+
+            Object.keys(breakpoints).forEach(function(point) {
+                if (document.body.scrollTop > point) {
+                    reveal(breakpoints[point]);
+                }
+            });
+        });
+    </script>
+</html>

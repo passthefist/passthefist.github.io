@@ -308,27 +308,76 @@ animation-delay: 4s;
 animation-delay: 6s;
 }
 
-@-webkit-keyframes slideUp { from { height:2000px;} to { height:340px;} }
-@-moz-keyframes slideUp { from { height:2000px;} to { height:340px;} }
-@keyframes slideUp { from { height:2000px;} to { height:340px;} }
+@-webkit-keyframes slideUp { 
+  from { 
+    background-color: rgba(255, 255, 255, 255);
+    padding-top:20px;
+  } to { 
+    background-color: rgba(255, 255, 255, 0);
+    padding-top:0px;
+  } 
+}
+@-moz-keyframes slideUp { 
+  from { 
+    background-color: rgba(255, 255, 255, 255);
+    padding-top:20px;
+  } to { 
+    background-color: rgba(255, 255, 255, 0);
+    padding-top:0px;
+  }  
+}
+@keyframes slideUp {
+  from { 
+    background-color: rgba(255, 255, 255, 255);
+    padding-top:20px;
+  } to { 
+    background-color: rgba(255, 255, 255, 0);
+    padding-top:0px;
+  } 
+}
 
-#profile.slide-up {
-    -webkit-animation:slideUp cubic-bezier(0.39, 0.58, 0.57, 1) 1;
-    -moz-animation:slideUp cubic-bezier(0.39, 0.58, 0.57, 1) 1;
-    animation:slideUp cubic-bezier(0.39, 0.58, 0.57, 1) 1;
+@-webkit-keyframes slideUp-content { from { opacity: 0; } to { opacity:1; } }
+@-moz-keyframes slideUp-content { from { opacity: 0; } to { opacity:1; } }
+@keyframes slideUp-content { from { opacity: 0; } to { opacity:1; } }
+
+.slide-up {
+    -webkit-animation:slideUp ease-in-out 1;
+    -moz-animation:slideUp ease-in-out 1;
+    animation:slideUp ease-in-out 1;
 
     -webkit-animation-fill-mode:forwards;
     -moz-animation-fill-mode:forwards;
     animation-fill-mode:forwards;
 
-    -webkit-animation-duration:4.5s;
-    -moz-animation-duration:4.5s;
-    animation-duration:4.5s;
+    -webkit-animation-duration:1.5s;
+    -moz-animation-duration:1.5s;
+    animation-duration:1.5s;
 
-    -webkit-animation-delay: 3.5s;
-    -moz-animation-delay: 3.5s;
-    animation-delay: 3.5s;
-    height:2000px;
+    -webkit-animation-delay: 6.5s;
+    -moz-animation-delay: 6.5s;
+    animation-delay: 6.5s;
+    padding-top:20px;
+    background-color: rgba(255, 255, 255, 255);
+}
+
+.slide-up > * {
+  -webkit-animation:slideUp-content ease-in 1;
+  -moz-animation:slideUp-content ease-in 1;
+  animation:slideUp-content ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:1.5s;
+  -moz-animation-duration:1.5s;
+  animation-duration:1.5s;
+
+  -webkit-animation-delay: 6.5s;
+  -moz-animation-delay: 6.5s;
+  animation-delay: 6.5s;
+
+  opacity: 0;
 }
 
 a.button {
@@ -408,8 +457,18 @@ hr { margin: 40px 0px; border-color: #727878; opacity: 0.2; filter:alpha(opacity
     background-position: 60% 0%;
 }
 
+#jobhistory.container { width: 100%; }
 #jobhistory .experience { margin-bottom: 20px; }
-#jobhistory .experience p > strong { display: block; padding-top: 8px; margin-bottom: 10px; font-size: 1.6rem; }
+#jobhistory .experience p > strong { 
+  display: block; 
+  padding-top: 8px;
+  margin-bottom: 10px;
+  font-size: 1.6rem;
+}
+#jobhistory .experience p {
+  margin: 0;
+  padding: 1rem;
+}
 #jobhistory .experience .experience-details { display: block; margin-top: 6px; }
 #jobhistory .experience .experience-details * { color: #22A39F; }
 #jobhistory .experience .experience-details .seperator { color: #ff617b; }
@@ -480,10 +539,6 @@ hr { margin: 40px 0px; border-color: #727878; opacity: 0.2; filter:alpha(opacity
   flex: 1 0 100%;
 }
 
-.tab__content p {
-  margin: 0;
-  padding: 1rem;
-}
 .tab__close {
   justify-content: flex-end;
   padding: 0.5rem 1rem;
@@ -620,10 +675,11 @@ hr { margin: 40px 0px; border-color: #727878; opacity: 0.2; filter:alpha(opacity
 	#profile .row * { text-align: center; }
 
   #jobhistory,
-  #jobhistory p,
-  #jobhistory .experience p > strong {
+  #jobhistory p {
     font-size: 2.25rem;
   }
+  #jobhistory .experience p > strong { font-size: 2.5rem; margin-bottom: -5px;}
+  #jobhistory .experience .experience-period { padding-top: 0px; padding-bottom: 0px; }
 	#jobhistory .experience .experience-details > span { display: block; margin-bottom: 6px; }
 	#jobhistory .experience .experience-details .seperator { display: none; }
 

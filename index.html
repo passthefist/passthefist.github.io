@@ -14,24 +14,13 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Rubik&display=swap" rel="stylesheet">
-        <!-- <script type="module">
+        <script type="module">
             var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
             if (isMobile) {
-                var head = document.getElementsByTagName('HEAD')[0];
-                var link = document.createElement('link');
-                link.rel = 'stylesheet';
-                link.type = 'text/css';
-                link.href = './css/mobile_styles.css';
-                head.appendChild(link);
-            } else {
-                var head = document.getElementsByTagName('HEAD')[0];
-                var link = document.createElement('link');
-                link.rel = 'stylesheet';
-                link.type = 'text/css';
-                link.href = './css/styles.css';
-                head.appendChild(link);
+                var root = document.getElementsByTagName('html')[0];
+                root.setAttribute("class", "mobile");
             }
-        </script> -->
+        </script>
     </head>
     <body data-spy="scroll" data-target="#navbar-example" data-twttr-rendered="true" class="fixed">
         <div id="title">

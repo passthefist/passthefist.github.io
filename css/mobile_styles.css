@@ -301,9 +301,7 @@ hr { margin: 20px 0px; border-color: #303838; opacity: 0.2; filter:alpha(opacity
 
 #testimonials .profilepic.bex {
   background-image: url('../img/headshot.jpg');
-
 }
-
 
 #experiences .profilepic-blur {
   -webkit-filter: blur(20px);
@@ -401,13 +399,15 @@ hr { margin: 20px 0px; border-color: #303838; opacity: 0.2; filter:alpha(opacity
 
 #contact {
   display: block;
-  width:90%;
-  height: 800px;
-  margin: 0px auto;
+  margin: 50px auto;
+  max-width: 50%;
   background-color: #aaa;
-  transform: scale(0.85);
-  margin-top: -50px;
+  padding: 1%;
   border-radius: 5px;
+}
+
+#contact textarea {
+  width: 100%;
 }
 
 .opl {

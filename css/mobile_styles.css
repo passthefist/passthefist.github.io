@@ -448,6 +448,10 @@ hr { margin: 20px 0px; border-color: #303838; opacity: 0.2; filter:alpha(opacity
   width: 50%;
 }
 
+.mobile #contact .container {
+  width: 90%;
+}
+
 #contact .row { color: #444; padding-bottom: 5px;}
 #contact h4 { text-align:center; font-size: 2.25rem;}
 

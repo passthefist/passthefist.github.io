@@ -375,6 +375,11 @@ hr { margin: 20px 0px; border-color: #303838; opacity: 0.2; filter:alpha(opacity
   padding-bottom: 10px;
 }
 
+.mobile h4 {
+  font-size: 2.1rem;
+}
+
+
 #testimonials {
   font-size: 1.5rem;
   margin: 0px;
@@ -446,6 +451,7 @@ hr { margin: 20px 0px; border-color: #303838; opacity: 0.2; filter:alpha(opacity
 
 #contact .container {
   width: 50%;
+  margin-bottom: 5%;
 }
 
 .mobile #contact .container {

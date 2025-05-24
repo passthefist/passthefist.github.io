@@ -17,9 +17,9 @@
 }
 
 @font-face {
-  font-family: "MadHacker";
+  font-family: "FortAvenue";
   font-style: normal;
-  src: url(../fonts/MadHacker.ttf) format("truetype");
+  src: url(../fonts/FortAvenue.ttf) format("truetype");
 }
 
 @font-face {
@@ -28,19 +28,31 @@
   src: url(../fonts/SDGlitch.ttf) format("truetype");
 }
 
+@font-face {
+  font-family: "VT323";
+  font-style: normal;
+  src: url(../fonts/VT323.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Chicago";
+  font-style: normal;
+  src: url(../fonts/Chicago.ttf) format("truetype");
+}
+
 
 #loading-blockout { display: none; }
-html { scroll-behavior: smooth; background: rgb(36, 38, 57);}
+html { scroll-behavior: smooth; background: rgb(36, 38, 57); perspective: 1px;}
 html.mobile { font-size: 1.5rem; }
 html, body { color: #434242; font-family: 'Nunito', sans-serif; min-height: 100%; border:none;}
 body {
   font-size: 2em; 
   line-height: 1.64;
-  perspective: 1px;
+  perspective: 2px;
   background-image: url("../img/devintro.webp");
-  background-attachment: scroll;
+  background-attachment:fixed;
   background-repeat: no-repeat;
-  background-position: top;
+  background-position:top;
 }
 
 a.button {
@@ -120,8 +132,12 @@ hr { margin: 20px 0px; border-color: #303838; opacity: 0.2; filter:alpha(opacity
   right: 0;
   background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
   z-index: 2;
-  background-size: 100% 2px, 3px 100%;
+  background-size: 100% 2px, 4px 100%;
   pointer-events: none;
+}
+
+.mobile .crt::before {
+  background-size: 100% 6px, 4px 100%;
 }
 
 #top-menu .container {
@@ -143,8 +159,8 @@ hr { margin: 20px 0px; border-color: #303838; opacity: 0.2; filter:alpha(opacity
   align-items: center;
   font-size: 2rem;
   color: white;
-  text-shadow: 0px 0px 4px rgb(0, 160, 59);
-  font-family: "SDGlitch", sans-serif;
+  text-shadow: 0px 0px 6px rgb(0, 160, 59);
+  font-family: "FortAvenue", sans-serif;
 }
 
 #top-menu span.emphasis {
@@ -169,13 +185,64 @@ hr { margin: 20px 0px; border-color: #303838; opacity: 0.2; filter:alpha(opacity
   color: rgb(13, 116, 112);
 }
 
+@keyframes unblur-fade {
+  from {scale:0.98; opacity: 0; filter: blur(3px);}
+  to {scale:1; opacity: 1; filter: blur(.5px);}
+}
+
+@keyframes flicker {
+  0% {text-color: cyan; text-shadow: 0px 1px 6px rgb(255, 174, 248);}
+  60% {text-color: cyan; text-shadow: 0px -1px 3px rgb(226, 241, 255);}
+  95% {text-color: rgb(226, 241, 255); text-shadow: 0px 0px 4px rgb(226, 241, 255); font-style: normal;}
+  96% {text-color: blue; text-shadow: -5px 1px 2px rgb(226, 241, 255); font-style: italic;}
+  96.5% {text-color: rgb(226, 241, 255); text-shadow: 0px 0px 4px rgb(226, 241, 255); font-style: normal;}
+  98% {text-color: red; text-shadow: 5px -1px 2px rgb(226, 241, 255); font-style: normal;}
+  99.5% {text-color: rgb(226, 241, 255); text-shadow: 0px 0px 4px rgb(226, 241, 255); font-style: normal;}
+  100% {text-color: rgb(226, 241, 255); text-shadow: 0px 0px 4px rgb(226, 241, 255);}
+}
+
+@keyframes flicker-mobile {
+  0% {text-color: cyan; text-shadow: 0px 3px 10px rgb(255, 174, 248);}
+  60% {text-color: cyan; text-shadow: 0px -3px 6px rgb(226, 241, 255);}
+  94% {text-color: rgb(226, 241, 255); text-shadow: 0px 0px 6px rgb(226, 241, 255); font-style: normal;}
+  95% {text-color: blue; text-shadow: -7px 2px 4px rgb(226, 241, 255); font-style: italic;}
+  96% {text-color: rgb(226, 241, 255); text-shadow: 0px 0px 4px rgb(226, 241, 255); font-style: normal;}
+  97% {text-color: red; text-shadow: 7px -2px 2px rgb(226, 241, 255); font-style: normal;}
+  99% {text-color: rgb(226, 241, 255); text-shadow: 0px 0px 8px rgb(226, 241, 255); font-style: normal;}
+  100% {text-color: rgb(226, 241, 255); text-shadow: 0px 0px 8px rgb(226, 241, 255);}
+}
+
+@keyframes letter-flicker {
+  0% {content: "s" !important; text-color: cyan; text-shadow: -5px -5px 0px rgb(255, 174, 248);}
+  .05% {content: "s";text-color: magenta; text-shadow: -1px -1px 4px rgb(226, 241, 255); font-style: normal; font-family: "FortAvenue", sans-serif;}
+  0.1% {content: "s";text-color: magenta; text-shadow: -1px -1px 4px rgb(226, 241, 255); font-style: italic; font-family: "FortAvenue", sans-serif;}
+  0.15% {content: "5"; text-color: cyan; text-shadow: 3px 3px 4px rgb(174, 255, 209); font-style: normal;}
+  0.2% {content: "z"; text-color: magenta; text-shadow: -1px -1px 4px rgb(226, 241, 255); font-style: italic;}
+  0.25% {content: "z" !important; text-color: rgb(226, 241, 255); text-shadow: 0px 0px 4px rgb(226, 241, 255); font-style: normal;}
+  99.75% {content: "z" !important; text-color: rgb(226, 241, 255); text-shadow: 0px 0px 4px rgb(226, 241, 255); font-style: normal;}
+  99.8% {content: "5"; text-color: magenta; text-shadow: 5px 5px 4px rgb(255, 174, 248); font-style: italic;}
+  99.85% {content: "z"; text-color: cyan; text-shadow: 3px 3px 4px rgb(174, 255, 209); font-style: normal;}
+  99.9% {content: "s";text-color: magenta; text-shadow: -1px -1px 4px rgb(226, 241, 255); font-style: italic; font-family: "FortAvenue", sans-serif;}
+  99.95% {content: "s";text-color: magenta; text-shadow: -1px -1px 4px rgb(226, 241, 255); font-style: normal; font-family: "FortAvenue", sans-serif;}
+  100% {content: "s" !important; text-color: rgb(226, 241, 255); text-shadow: 0px 0px 4px rgb(226, 241, 255); font-style: normal;}
+
+}
+
+@keyframes blur-reveal {
+  from {backdrop-filter: blur(0px);}
+  to {backdrop-filter: blur(3px);}
+}
+
 #title {
-  -webkit-backdrop-filter: blur(3px);
-  backdrop-filter: blur(3px);
   background: linear-gradient(0deg, rgba(36, 38, 57, 1) 0%, rgba(0,0,0,0.4) 15%, rgba(0,0,0,0.4) 90%, rgba(0,0,0,.8) 100%);
   width: 100%;
   height: 55rem;
   display: block;
+
+  animation-name: blur-reveal;
+  animation-delay: 0.5s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 
 .mobile #title {
@@ -183,15 +250,48 @@ hr { margin: 20px 0px; border-color: #303838; opacity: 0.2; filter:alpha(opacity
 }
 
 #title h1 {
+  opacity: 0;
   position: absolute;
   top: 8rem;
-  color: rgb(225, 239, 252);;
-  text-shadow: 0px 0px 3px rgb(0, 160, 59);
+  color: transparent;
   width: 80%;
   text-align: center;
-  font-size: 6rem;
+  font-size: 5.1rem;
   margin: 10%;
-  font-family: 'SDGlitch', sans-serif;
+  font-family: 'FortAvenue', sans-serif;
+  text-shadow: 0px 0px 2px rgb(226, 241, 255);
+  background: linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(248, 248, 248, 1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.48) 25%, rgba(0, 255, 0, 0.48) 60%, rgba(0, 0, 255, 0.18));
+  background-clip: text;
+  background-size: 100% 4px, 40px 100%;
+  animation-fill-mode: forwards;
+
+
+  animation-name: unblur-fade;
+  animation-duration: 1.5s;
+  animation-delay: 0.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+}
+
+#title h1 span {
+  animation-name: flicker;
+  animation-duration: 2.5s;
+  animation-delay: 0.5s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+.mobile #title h1 span {
+  animation-name: flicker-mobile;
+}
+
+#title h1 span.s-flicker::after {
+  animation-name: letter-flicker;
+  animation-duration: 65s;
+  animation-delay: 2.95s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  content:"s";
 }
 
 .mobile #title h1 {
@@ -199,6 +299,9 @@ hr { margin: 20px 0px; border-color: #303838; opacity: 0.2; filter:alpha(opacity
   top: 8rem;
   margin: 0%;
   width: 100%;
+  text-shadow: 0px 0px 4px rgb(226, 241, 255);
+  background-size: 100% 6px, 40px 100%;
+
 }
 
 #profile {
@@ -228,6 +331,9 @@ hr { margin: 20px 0px; border-color: #303838; opacity: 0.2; filter:alpha(opacity
 
 #profile h3 {
   margin-top: 0px;
+  font-family: 'VT323', sans-serif;
+  line-height: 1;
+  font-size: 3rem;
 }
 
 .mobile #profile h3 {
@@ -242,12 +348,15 @@ hr { margin: 20px 0px; border-color: #303838; opacity: 0.2; filter:alpha(opacity
 #profile .content {
   color: rgb(0, 160, 59);
   text-shadow: 0px 0px 2px rgb(0, 160, 59);
-  font-family: 'Eightgon', sans-serif;
-  font-size: 1rem;
+  box-shadow: inset 0px -3px 10px rgb(0, 160, 59);
+
+  font-size: 1.3rem;
   text-align: left;
   position: relative;
   border: 1px solid rgb(0, 160, 59);
   padding-top:15px;
+  font-family: 'VT323', sans-serif;
+  line-height: 1;
 }
 
 .mobile #profile .content {
@@ -312,6 +421,7 @@ hr { margin: 20px 0px; border-color: #303838; opacity: 0.2; filter:alpha(opacity
   padding: 0px;
   background: rgb(36, 38, 57);
   text-align: center;
+  font-family: 'Chicago', sans-serif;
 }
 
 .container.windowed {

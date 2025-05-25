@@ -186,30 +186,44 @@ hr { margin: 20px 0px; border-color: #303838; opacity: 0.2; filter:alpha(opacity
 }
 
 @keyframes unblur-fade {
-  from {scale:0.98; opacity: 0; filter: blur(3px);}
+  from {scale:0.99; opacity: 0; filter: blur(1px);}
   to {scale:1; opacity: 1; filter: blur(.5px);}
 }
 
 @keyframes flicker {
-  0% {text-color: cyan; text-shadow: 0px 1px 6px rgb(255, 174, 248);}
-  60% {text-color: cyan; text-shadow: 0px -1px 3px rgb(226, 241, 255);}
-  95% {text-color: rgb(226, 241, 255); text-shadow: 0px 0px 4px rgb(226, 241, 255); font-style: normal;}
-  96% {text-color: blue; text-shadow: -5px 1px 2px rgb(226, 241, 255); font-style: italic;}
-  96.5% {text-color: rgb(226, 241, 255); text-shadow: 0px 0px 4px rgb(226, 241, 255); font-style: normal;}
-  98% {text-color: red; text-shadow: 5px -1px 2px rgb(226, 241, 255); font-style: normal;}
-  99.5% {text-color: rgb(226, 241, 255); text-shadow: 0px 0px 4px rgb(226, 241, 255); font-style: normal;}
+  0% {text-color: rgb(226, 241, 255); text-shadow: 4px 2px 4px rgb(226, 241, 255); font-style: normal;}
+  80% {text-color: rgb(226, 241, 255); text-shadow: 0px 0px 4px rgb(226, 241, 255); font-style: normal;}
+  94% {text-color: rgb(226, 241, 255); text-shadow: -3px 0px 4px rgb(226, 241, 255); font-style: normal;}
+  95% {text-color: rgb(226, 241, 255); text-shadow: 0px 1px 4px rgb(226, 241, 255); font-style: normal;}
+  96% {text-color: blue; text-shadow: -5px -5px 2px rgb(226, 241, 255); font-style: italic;}
+  97% {text-color: rgb(226, 241, 255); text-shadow: 5px 5px 4px rgb(226, 241, 255); font-style: normal;}
+  98% {text-color: red; text-shadow: 0px 0px 2px rgb(226, 241, 255); font-style: italic;}
+  99% {text-color: rgb(226, 241, 255); text-shadow: 3px 0px 4px rgb(226, 241, 255); font-style: normal;}
   100% {text-color: rgb(226, 241, 255); text-shadow: 0px 0px 4px rgb(226, 241, 255);}
 }
 
 @keyframes flicker-mobile {
-  0% {text-color: cyan; text-shadow: 0px 3px 10px rgb(255, 174, 248);}
-  60% {text-color: cyan; text-shadow: 0px -3px 6px rgb(226, 241, 255);}
-  94% {text-color: rgb(226, 241, 255); text-shadow: 0px 0px 6px rgb(226, 241, 255); font-style: normal;}
-  95% {text-color: blue; text-shadow: -7px 2px 4px rgb(226, 241, 255); font-style: italic;}
-  96% {text-color: rgb(226, 241, 255); text-shadow: 0px 0px 4px rgb(226, 241, 255); font-style: normal;}
-  97% {text-color: red; text-shadow: 7px -2px 2px rgb(226, 241, 255); font-style: normal;}
-  99% {text-color: rgb(226, 241, 255); text-shadow: 0px 0px 8px rgb(226, 241, 255); font-style: normal;}
-  100% {text-color: rgb(226, 241, 255); text-shadow: 0px 0px 8px rgb(226, 241, 255);}
+  0% {text-color: rgb(226, 241, 255); text-shadow: 8px 4px 8px rgb(226, 241, 255); font-style: normal;}
+  80% {text-color: rgb(226, 241, 255); text-shadow: 0px 0px 8px rgb(226, 241, 255); font-style: normal;}
+  94% {text-color: rgb(226, 241, 255); text-shadow: -6px 0px 4px rgb(226, 241, 255); font-style: normal;}
+  95% {text-color: rgb(226, 241, 255); text-shadow: 0px 2px 4px rgb(226, 241, 255); font-style: normal;}
+  96% {text-color: blue; text-shadow: -10px -10px 2px rgb(255, 226, 246); font-style: italic;}
+  97% {text-color: rgb(226, 241, 255); text-shadow: 10px 10px 4px rgb(226, 241, 255); font-style: normal;}
+  98% {text-color: red; text-shadow: 0px 0px 2px rgb(218, 205, 255); font-style: italic;}
+  99% {text-color: rgb(226, 241, 255); text-shadow: 6px 0px 4px rgb(226, 241, 255); font-style: normal;}
+  100% {text-color: rgb(226, 241, 255); text-shadow: 0px 0px 4px rgb(226, 241, 255);}
+}
+
+
+@keyframes flicker-mobile-old {
+  0% {text-color: cyan; text-shadow: 6px 3px 10px rgb(255, 174, 248);}
+  80% {text-color: cyan; text-shadow: 0px -3px 6px rgb(226, 241, 255);}
+  90% {text-color: rgb(226, 241, 255); text-shadow: 0px 0px 6px rgb(226, 241, 255); font-style: normal;}
+  92% {text-color: blue; text-shadow: -7px 2px 4px rgb(226, 241, 255); font-style: italic;}
+  94% {text-color: #e2f1ff; text-shadow: -5px 0px 4px rgb(226, 241, 255); font-style: normal;}
+  96% {text-color: red; text-shadow: 7px -2px 2px rgb(226, 241, 255); font-style: italic;}
+  98% {text-color: rgb(226, 241, 255); text-shadow: 0px 5px 4px rgb(226, 241, 255); font-style: normal;}
+  100% {text-color: rgb(226, 241, 255); text-shadow: 0px 0px 4px rgb(226, 241, 255);}
 }
 
 @keyframes letter-flicker {
@@ -243,6 +257,7 @@ hr { margin: 20px 0px; border-color: #303838; opacity: 0.2; filter:alpha(opacity
   animation-delay: 0.5s;
   animation-duration: 1s;
   animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
 }
 
 .mobile #title {
@@ -267,28 +282,29 @@ hr { margin: 20px 0px; border-color: #303838; opacity: 0.2; filter:alpha(opacity
 
 
   animation-name: unblur-fade;
-  animation-duration: 1.5s;
-  animation-delay: 0.5s;
+  animation-duration: 1s;
+  animation-delay: 0.25s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
 }
 
 #title h1 span {
   animation-name: flicker;
-  animation-duration: 2.5s;
-  animation-delay: 0.5s;
-  animation-timing-function: ease-in;
+  animation-duration: 1.5s;
+  animation-delay: .5s;
+  animation-timing-function: ease-out;
   animation-fill-mode: forwards;
 }
 
 .mobile #title h1 span {
   animation-name: flicker-mobile;
+
 }
 
 #title h1 span.s-flicker::after {
   animation-name: letter-flicker;
-  animation-duration: 65s;
-  animation-delay: 2.95s;
+  animation-duration: 85s;
+  animation-delay: 4s;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
   content:"s";

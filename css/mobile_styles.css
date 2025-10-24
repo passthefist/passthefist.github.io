@@ -35,9 +35,9 @@
 }
 
 @font-face {
-  font-family: "Chicago";
+  font-family: "KarmaSuture";
   font-style: normal;
-  src: url(../fonts/Chicago.ttf) format("truetype");
+  src: url(../fonts/KarmaSuture.ttf) format("truetype");
 }
 
 
@@ -53,6 +53,10 @@ body {
   background-attachment:fixed;
   background-repeat: no-repeat;
   background-position:top;
+}
+
+.mobile .mobile-hide {
+  display: none;
 }
 
 a.button {
@@ -83,18 +87,18 @@ a.button {
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, strong, b { 
-  font-family: 'Rubik', sans-serif; margin-bottom: 10px;
+  font-family: 'Arial', sans-serif; margin-bottom: 10px;
 }
-h4 { font-weight: 700; margin-bottom: 5px; font-size: 2em; color: #666; }
+h4 { font-weight: 600; margin-bottom: 5px; font-size: 2em; color: #666; }
 h1 { font-size: 3.5em; margin: 0px; }
-h1,h2,h3 { font-weight: 300; color: #22A39F; }
+h1,h2,h3 { font-weight: 300;}
 
-html h2 { font-size: 3em; text-align: center; font-family: 'Eightgon'; margin-bottom: 5px; margin-top: 5px;}
-html h3 { font-size: 2.5em; font-family: 'Eightgon'; margin-bottom: 5px; margin-top: 5px;}
+html h2 { font-size: 3em; text-align: center; font-family: 'Arial'; margin-bottom: 5px; margin-top: 5px;}
+html h3 { font-size: 2.5em; font-family: 'Arial'; margin-bottom: 5px; margin-top: 5px;}
 html.mobile h2 { font-size: 3rem;}
 html.mobile h3 { font-size: 2.1rem;}
 
-html h4 { color: #444; font-family: 'Eightgon', sans-serif; font-size: 2.5rem;}
+html h4 { color: #444; font-family: 'Arial', sans-serif; font-size: 2.5rem;}
 
 ul { padding-left: 20px;}
 
@@ -160,7 +164,12 @@ hr { margin: 20px 0px; border-color: #303838; opacity: 0.2; filter:alpha(opacity
   font-size: 2rem;
   color: white;
   text-shadow: 0px 0px 6px rgb(0, 160, 59);
-  font-family: "FortAvenue", sans-serif;
+  font-family: "Arial", sans-serif;
+  animation: unblur-fade-nav;
+  animation-duration: 3s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 
 #top-menu span.emphasis {
@@ -178,68 +187,53 @@ hr { margin: 20px 0px; border-color: #303838; opacity: 0.2; filter:alpha(opacity
 #top-menu a {
   margin: 0px 15px;
   color: rgb(209, 230, 251);
+  transition: color .5s;
 }
 
 #top-menu a:hover {
   text-decoration: none;
-  color: rgb(13, 116, 112);
+  color: rgb(164, 255, 252);
+  transition: color .5s;
 }
 
-@keyframes unblur-fade {
-  from {scale:0.99; opacity: 0; filter: blur(1px);}
-  to {scale:1; opacity: 1; filter: blur(.5px);}
+@keyframes unblur-fade-h1 {
+  from {transform: scaleY(1.5); opacity: 0.0; filter: blur(2px); background-size: 100% 4px, 40px 100%; padding-left:7.5px;}
+  to {transform: scaleY(1); opacity: 1; filter: blur(.25px); background-size: 100% 4px, 15px 100%; padding-left:0px;}
+}
+
+@keyframes unblur-fade-h1-mobile {
+  from {transform: scaleY(1.25); opacity: 0.0; filter: blur(2px); background-size: 100% 4px, 40px 100%; padding-left:7.5px;}
+  to {transform: scaleY(1); opacity: 1; filter: blur(.25px); background-size: 100% 4px, 15px 100%; padding-left:0px;}
+}
+
+@keyframes unblur-fade-nav{
+  from {opacity: 0.0; filter: blur(2px); background-size: 100% 4px, 40px 100%; padding-left:4px;}
+  to {opacity: 1; filter: blur(.25px); background-size: 100% 4px, 15px 100%; padding-left:0px;}
 }
 
 @keyframes flicker {
-  0% {text-color: rgb(226, 241, 255); text-shadow: 4px 2px 4px rgb(226, 241, 255); font-style: normal;}
-  80% {text-color: rgb(226, 241, 255); text-shadow: 0px 0px 4px rgb(226, 241, 255); font-style: normal;}
-  94% {text-color: rgb(226, 241, 255); text-shadow: -3px 0px 4px rgb(226, 241, 255); font-style: normal;}
-  95% {text-color: rgb(226, 241, 255); text-shadow: 0px 1px 4px rgb(226, 241, 255); font-style: normal;}
-  96% {text-color: blue; text-shadow: -5px -5px 2px rgb(226, 241, 255); font-style: italic;}
-  97% {text-color: rgb(226, 241, 255); text-shadow: 5px 5px 4px rgb(226, 241, 255); font-style: normal;}
-  98% {text-color: red; text-shadow: 0px 0px 2px rgb(226, 241, 255); font-style: italic;}
-  99% {text-color: rgb(226, 241, 255); text-shadow: 3px 0px 4px rgb(226, 241, 255); font-style: normal;}
-  100% {text-color: rgb(226, 241, 255); text-shadow: 0px 0px 4px rgb(226, 241, 255);}
+   0% {text-color: rgb(230, 0, 255); text-shadow: -15px 0px 1px rgb(226, 241, 255);}
+ 100% {text-color: rgb(226, 241, 255); text-shadow: 0px 0px 4px rgb(226, 241, 255);}
 }
 
 @keyframes flicker-mobile {
-  0% {text-color: rgb(226, 241, 255); text-shadow: 8px 4px 8px rgb(226, 241, 255); font-style: normal;}
-  80% {text-color: rgb(226, 241, 255); text-shadow: 0px 0px 8px rgb(226, 241, 255); font-style: normal;}
-  94% {text-color: rgb(226, 241, 255); text-shadow: -6px 0px 4px rgb(226, 241, 255); font-style: normal;}
-  95% {text-color: rgb(226, 241, 255); text-shadow: 0px 2px 4px rgb(226, 241, 255); font-style: normal;}
-  96% {text-color: blue; text-shadow: -10px -10px 2px rgb(255, 226, 246); font-style: italic;}
-  97% {text-color: rgb(226, 241, 255); text-shadow: 10px 10px 4px rgb(226, 241, 255); font-style: normal;}
-  98% {text-color: red; text-shadow: 0px 0px 2px rgb(218, 205, 255); font-style: italic;}
-  99% {text-color: rgb(226, 241, 255); text-shadow: 6px 0px 4px rgb(226, 241, 255); font-style: normal;}
-  100% {text-color: rgb(226, 241, 255); text-shadow: 0px 0px 4px rgb(226, 241, 255);}
-}
-
-
-@keyframes flicker-mobile-old {
-  0% {text-color: cyan; text-shadow: 6px 3px 10px rgb(255, 174, 248);}
-  80% {text-color: cyan; text-shadow: 0px -3px 6px rgb(226, 241, 255);}
-  90% {text-color: rgb(226, 241, 255); text-shadow: 0px 0px 6px rgb(226, 241, 255); font-style: normal;}
-  92% {text-color: blue; text-shadow: -7px 2px 4px rgb(226, 241, 255); font-style: italic;}
-  94% {text-color: #e2f1ff; text-shadow: -5px 0px 4px rgb(226, 241, 255); font-style: normal;}
-  96% {text-color: red; text-shadow: 7px -2px 2px rgb(226, 241, 255); font-style: italic;}
-  98% {text-color: rgb(226, 241, 255); text-shadow: 0px 5px 4px rgb(226, 241, 255); font-style: normal;}
-  100% {text-color: rgb(226, 241, 255); text-shadow: 0px 0px 4px rgb(226, 241, 255);}
+  0% {text-color: rgb(230, 0, 255); text-shadow: -25px 0px 2px rgb(226, 241, 255);}
+  80% {text-color: rgb(226, 241, 255); text-shadow: -1px 0px 15px rgb(226, 241, 255);}
+ 100% {text-color: rgb(226, 241, 255); text-shadow: 0px 0px 5px rgb(226, 241, 255);}
 }
 
 @keyframes letter-flicker {
   0% {content: "s" !important; text-color: cyan; text-shadow: -5px -5px 0px rgb(255, 174, 248);}
   .05% {content: "s";text-color: magenta; text-shadow: -1px -1px 4px rgb(226, 241, 255); font-style: normal; font-family: "FortAvenue", sans-serif;}
-  0.1% {content: "s";text-color: magenta; text-shadow: -1px -1px 4px rgb(226, 241, 255); font-style: italic; font-family: "FortAvenue", sans-serif;}
+  0.12% {content: "s";text-color: magenta; text-shadow: -1px -1px 4px rgb(226, 241, 255); font-style: italic; font-family: "FortAvenue", sans-serif;}
   0.15% {content: "5"; text-color: cyan; text-shadow: 3px 3px 4px rgb(174, 255, 209); font-style: normal;}
   0.2% {content: "z"; text-color: magenta; text-shadow: -1px -1px 4px rgb(226, 241, 255); font-style: italic;}
-  0.25% {content: "z" !important; text-color: rgb(226, 241, 255); text-shadow: 0px 0px 4px rgb(226, 241, 255); font-style: normal;}
-  99.75% {content: "z" !important; text-color: rgb(226, 241, 255); text-shadow: 0px 0px 4px rgb(226, 241, 255); font-style: normal;}
-  99.8% {content: "5"; text-color: magenta; text-shadow: 5px 5px 4px rgb(255, 174, 248); font-style: italic;}
-  99.85% {content: "z"; text-color: cyan; text-shadow: 3px 3px 4px rgb(174, 255, 209); font-style: normal;}
-  99.9% {content: "s";text-color: magenta; text-shadow: -1px -1px 4px rgb(226, 241, 255); font-style: italic; font-family: "FortAvenue", sans-serif;}
-  99.95% {content: "s";text-color: magenta; text-shadow: -1px -1px 4px rgb(226, 241, 255); font-style: normal; font-family: "FortAvenue", sans-serif;}
-  100% {content: "s" !important; text-color: rgb(226, 241, 255); text-shadow: 0px 0px 4px rgb(226, 241, 255); font-style: normal;}
-
+  0.27% {content: "s" !important; text-color: rgb(145, 255, 0); text-shadow: 0px 0px 4px rgb(226, 241, 255); font-style: normal;}
+  0.32% {content: "z";text-color: magenta; text-shadow: -1px -1px 4px rgb(226, 241, 255); font-style: italic; font-family: "FortAvenue", sans-serif;}
+  0.36% {content: "5"; text-color: cyan; text-shadow: 3px 3px 4px rgb(174, 255, 209); font-style: normal;}
+  0.40% {content: "z"; text-color: magenta; text-shadow: -1px -1px 4px rgb(226, 241, 255); font-style: italic;}
+  0.47% {content: "z" !important; text-color: rgb(145, 255, 0); text-shadow: 0px 0px 4px rgb(226, 241, 255); font-style: normal;}
+  100% {content: "z" !important; text-color: rgb(226, 241, 255); text-shadow: 0px 0px 4px rgb(226, 241, 255); font-style: normal;}
 }
 
 @keyframes blur-reveal {
@@ -252,12 +246,13 @@ hr { margin: 20px 0px; border-color: #303838; opacity: 0.2; filter:alpha(opacity
   width: 100%;
   height: 55rem;
   display: block;
+  filter: blur(.25);
 
   animation-name: blur-reveal;
+  animation-duration: 3s;
   animation-delay: 0.5s;
-  animation-duration: 1s;
   animation-fill-mode: forwards;
-  animation-timing-function: ease-out;
+  animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
 }
 
 .mobile #title {
@@ -280,31 +275,32 @@ hr { margin: 20px 0px; border-color: #303838; opacity: 0.2; filter:alpha(opacity
   background-size: 100% 4px, 40px 100%;
   animation-fill-mode: forwards;
 
-
-  animation-name: unblur-fade;
-  animation-duration: 1s;
-  animation-delay: 0.25s;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-in;
+  animation-name: unblur-fade-h1;
+  animation-duration: 3.5s;
+  animation-delay: 0.5s;
+  animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
 }
 
-#title h1 span {
+.mobile #title h1 {
+  animation-name: unblur-fade-h1-mobile;
+}
+
+#title h1 span:not(.s-flicker) {
   animation-name: flicker;
-  animation-duration: 1.5s;
-  animation-delay: .5s;
-  animation-timing-function: ease-out;
+  animation-duration: 3.5s;
+  animation-delay: 0.5s;
+  animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
   animation-fill-mode: forwards;
 }
 
 .mobile #title h1 span {
   animation-name: flicker-mobile;
-
 }
 
 #title h1 span.s-flicker::after {
   animation-name: letter-flicker;
-  animation-duration: 85s;
-  animation-delay: 4s;
+  animation-duration: 95s;
+  animation-delay: 4.5s;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
   content:"s";
@@ -318,6 +314,20 @@ hr { margin: 20px 0px; border-color: #303838; opacity: 0.2; filter:alpha(opacity
   text-shadow: 0px 0px 4px rgb(226, 241, 255);
   background-size: 100% 6px, 40px 100%;
 
+}
+
+@keyframes cursor-blink {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+span.cursor-blink {
+  content: "_" !important;
+  animation-name: cursor-blink;
+  animation-duration: .85s;
+  animation-timing-function: ease-out;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
 }
 
 #profile {
@@ -357,8 +367,8 @@ hr { margin: 20px 0px; border-color: #303838; opacity: 0.2; filter:alpha(opacity
   top: -3rem;
   right: 0px;
   left: 0px;
-  width: 150%;
-  text-align: left;
+  width: 100%;
+  text-align: center;
 }
 
 #profile .content {
@@ -388,16 +398,25 @@ hr { margin: 20px 0px; border-color: #303838; opacity: 0.2; filter:alpha(opacity
 }
 
 #profile .profilepic.self {
-  max-height: 200px;
-  min-height: 150px;
-  max-width: 200px;
-  min-width: 150px;
-  width: calc(88% - 16px);
-  margin-top: -8px;
+  width: 150px;
+  margin-top: -4rem;
+  margin-left: 0.5rem;
+  margin-bottom: 1rem;
+  margin-right: 4.5rem;
   border-radius: .5em;
   border: 1px solid rgb(0, 160, 59);
   box-shadow: 0px 0px 3px rgb(0, 160, 59);
   background-image: url('../img/headshot.jpg');
+}
+
+.mobile #profile .profilepic.self {
+  max-height: 250px;
+  min-height: 250px;
+  max-width: 250px;
+  min-width: 250px;
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .profilepic {
@@ -410,8 +429,8 @@ hr { margin: 20px 0px; border-color: #303838; opacity: 0.2; filter:alpha(opacity
 
 #profile p,
 #profile h3 {
-  padding-right: 10%;
-  padding-left: 10%;
+  padding-right: 5%;
+  padding-left: 5%;
 }
 
 .mobile #profile p,
@@ -437,7 +456,7 @@ hr { margin: 20px 0px; border-color: #303838; opacity: 0.2; filter:alpha(opacity
   padding: 0px;
   background: rgb(36, 38, 57);
   text-align: center;
-  font-family: 'Chicago', sans-serif;
+  font-family: 'Arial', sans-serif;
 }
 
 .container.windowed {
@@ -501,8 +520,14 @@ hr { margin: 20px 0px; border-color: #303838; opacity: 0.2; filter:alpha(opacity
   padding-bottom: 10px;
 }
 
+.mobile #approach h3 {
+  font-size: 2.5rem;
+}
+
 .mobile h4 {
-  font-size: 2.1rem;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: black;
 }
 
 
@@ -511,7 +536,8 @@ hr { margin: 20px 0px; border-color: #303838; opacity: 0.2; filter:alpha(opacity
   margin: 0px;
   background: rgb(36, 38, 57);
   color: rgb(0, 160, 59);
-  padding: 20px 10%;
+  padding: 20px 5%;
+  padding-bottom: 0px;
 }
 
 #testimonials h2 {
@@ -534,6 +560,14 @@ hr { margin: 20px 0px; border-color: #303838; opacity: 0.2; filter:alpha(opacity
   position: relative;
 }
 
+#testimonials .col-md-8 {
+  padding-right: 0px;
+}
+
+#testimonials p {
+  font-size: 1.8rem;
+}
+
 .mobile #testimonials .quote {
   /*width: calc(100% - 10px);*/
 }
@@ -553,19 +587,55 @@ hr { margin: 20px 0px; border-color: #303838; opacity: 0.2; filter:alpha(opacity
   text-align: left;
   display: inline-block;
   vertical-align: middle;
+  padding-right: 0px;
+}
+
+.mobile #testimonials .ident .name {
+  padding-right: inherit;
+  padding-left: 1.5rem;
 }
 
 #testimonials .profilepic {
-  height: 9.8rem;
-  width: 9.8rem;
+  height: 13rem;
+  width: 13rem;
   border: 1px solid rgb(0, 160, 59);
   box-shadow: 0px 0px 3px rgb(0, 160, 59);
   border-radius: .5rem;
   display: inline-block;
 }
 
+.mobile #testimonials .profilepic {
+  height: 6rem;
+  width: 6rem;
+  text-align: right;
+}
+
 #testimonials .profilepic.bex {
   background-image: url('../img/headshot.jpg');
+}
+
+#ads {
+  font-size: 1.5rem;
+  margin: 0px;
+  background: rgb(36, 38, 57);
+  padding: 0px 5%;
+}
+
+#ads .crt h4 {
+  color: rgb(0, 160, 59);
+}
+
+#ads .pricing {
+  color: rgb(0, 160, 59);
+  text-align: left;
+  margin-top: 1rem;
+  padding: 10px;
+  border: 1px solid green;
+  text-shadow: 0px 0px 2px rgb(0, 160, 59);
+  box-shadow: 0px 0px 1px gray;
+  font-family: 'Eightgon', sans-serif;
+  font-size: 1.8rem;
+  position: relative;
 }
 
 #contact {

@@ -104,14 +104,18 @@
 
       <h3>Process (concise, replicable)</h3>
       <ol>
-        <li><strong>Data aggregation:</strong> public datasets (economic indicators, trust surveys), major reporting, and policy briefs were compiled and interactively fed into a guided LLM session. Sources spanned ideological perspectives to minimize single-source/viewpoint bias.</li>
-        <li><strong>Signal extraction:</strong> the LLM summarized recurring themes (e.g., information fragmentation, debt risk, civic mutual aid, cyclical patterns), highlighting leading and lagging indicators. Historical comparisons were used to provide context for data inputs.</li>
-        <li><strong>Scenario construction:</strong> three coherent trajectories were generated with each representing a normal, +1 standard deviation, and -1 standard deviation projection (baseline, optimistic, pessimistic, respectively) from a probabalistic model built by the previous steps.</li>
-        <li><strong>Validation & calibration:</strong> outputs were checked for internal consistency, analogical fit (see section VIII: Historical Comparisons), and sensitivity to key variables (consumer credit, protest intensity, media consolidation, etc.).</li>
-        <li><strong>Interpretive synthesis:</strong> the final narrative emphasizes leverage points — what citizens and governments can realistically do now — as well as the major forces likely to constrain and influence outcomes.</li>
+        <li><strong>Data aggregation:</strong> Public datasets (economic indicators, trust surveys), major reporting, and policy briefs were compiled and interactively fed into a guided LLM session. Sources spanned ideological perspectives to minimize single-source/viewpoint bias.</li>
+        <li><strong>Signal extraction:</strong> The LLM summarized recurring themes (e.g., information fragmentation, debt risk, civic mutual aid, cyclical patterns), highlighting leading and lagging indicators. Historical comparisons were used to provide context for data inputs.</li>
+        <li><strong>Base Index:</strong> An experimental index was created to average indicators across four pillars: trust, participation, adaptability, and equity. This transforms qualitative inputs into a simple numerical output as a "democratic health bar".</li>
+        <li><strong>Model formation:</strong> This index was used to form a probabalistic model by connecting an index value to a grounded narrative, which is analyzed for its approximate likelihood. This model assumes a normal distribution of outcomes across index values.</li>
+        <li><strong>Scenario construction:</strong> Three coherent trajectories were generated with each representing a mean, +1 standard deviation, and -1 standard deviation projection (baseline, optimistic, pessimistic, respectively) from the probabalistic model.</li>
+        <li><strong>Validation & calibration:</strong> Outputs were checked for internal consistency, analogical fit (see section VIII: Historical Comparisons), and sensitivity to key variables (consumer credit, protest intensity, media consolidation, etc.).</li>
+        <li><strong>Iterative refinement:</strong> Narrative and analogical inconsistencies defined information gaps to feed back into step one. Full process repeated until narrative fit distance dropped below a qualitative threshold.</li>
+        <li><strong>Interpretive synthesis:</strong> Final narrative emphasizes leverage points — what citizens and governments can realistically do now — as well as the major forces likely to constrain and influence outcomes.</li>
+        <li><strong>Report Generation:</strong> This report was generated from the same interactive LLM session, specified to be in the style of a think tank release in HTML format. The LLM's base output was then manually adjusted for content specificity and readability.</li>
       </ol>
 
-      <p class="small">Note: the LLM was used as a research assistant, synthesis tool, and report generator only; factual claims should be verified against primary sources for operational decision-making.</p>
+      <p class="small"><strong>Note:</strong> the LLM was used as a research assistant, synthesis tool, and report generator only; factual claims should be verified against primary sources for operational decision-making.</p>
     </section>
 
     <section id="context">
@@ -120,13 +124,13 @@
       <p>Contemporary dynamics are the cumulative product of several long-term shifts:</p>
 
       <ul>
-        <li><strong>Neoliberal economic restructuring:</strong> deregulation and financialization shifted economic returns to capital and asset holders, hollowing working-class bargaining power and local economic resilience.</li>
-        <li><strong>Technological consolidation:</strong> platform dominance concentrated attention and monetized outrage, fragmenting shared narratives and accelerating distrust.</li>
-        <li><strong>Institutional erosion:</strong> repeated crises (financial, security, pandemic) undermined faith in large institutions while empowering emergency governance as the de facto mode.</li>
-        <li><strong>Civic atomization:</strong> declining intermediaries (local media, unions, churches, clubs) reduced durable sites of public deliberation and practice.</li>
+        <li><strong>Neoliberal economic restructuring:</strong> Deregulation and financialization shifted economic returns to capital and asset holders, hollowing working-class bargaining power and local economic resilience.</li>
+        <li><strong>Technological consolidation:</strong> Platform dominance concentrated attention and monetized outrage, fragmenting shared narratives and accelerating distrust.</li>
+        <li><strong>Institutional erosion:</strong> Repeated crises (financial, security, pandemic) undermined faith in large institutions while empowering emergency governance as the de facto mode.</li>
+        <li><strong>Civic atomization:</strong> Declining intermediaries (local media, unions, churches, clubs) reduced durable sites of public deliberation and practice.</li>
       </ul>
 
-      <p class="callout">Implication: the U.S. currently has high coordination capacity (technology, logistics, fiscal levers) but low public legitimacy — a recipe for efficient enforcement without broad consent.</p>
+      <p class="callout"><strong>Implication:</strong> The U.S. currently has high coordination capacity (technology, logistics, fiscal levers) but low public legitimacy — a recipe for efficient enforcement without broad consent.</p>
     </section>
 
     <section id="conditions">
@@ -248,16 +252,16 @@
             <td><strong>Civic Resistance</strong></td>
             <td>Protesters, labor movements, mutual aid networks</td>
             <td>Strikes, blockades, boycotts, digital dissent</td>
-            <td>Reassert moral order, resist normalization of coercion</td>
+            <td>Resist normalization of coercion</td>
           </tr>
           <tr>
-            <td><strong>Corporate Structural Violence</strong></td>
+            <td><strong>Corporate Structural Control</strong></td>
             <td>Major firms, financial institutions</td>
             <td>Automation, evictions, lobbying, disinformation</td>
-            <td>Preserve economic dominance through systemic harm</td>
+            <td>Preserve economic dominance through financial influence</td>
           </tr>
         </tbody>
-        <caption>Spectrum of violence and political functions—expanded to include structural harms.</caption>
+        <caption>Spectrum of violence and political functions — expanded to include non-violent systems of control.</caption>
       </table>
       <h3>Key Trends</h3>
 
@@ -281,19 +285,22 @@
     <section id="scenarios">
       <h2>VI. One-Year Outlook — Detailed Scenarios (2025–2026)</h2>
 
-      <h3>Scenario 1 — Baseline Stability (~50% likelihood, median)</h3>
+      <p>
+        The constructed probabalistic model was queried to form a coherent narrative of the socio-political landsape at three different deviations: mean, +1, and -1. While each of these narratives is self-contained, real-life outcomes are complex and will share mixed aspects of each.
+      </p>
+      <h3>Scenario 1 — Baseline Stability (~50% likelihood, mean)</h3>
       <p><strong>Overview:</strong> The system continues to adapt without transformational change. Local innovation grows (co-ops, participatory budgeting pilots), but national institutions retain formal authority while public trust remains low.</p>
-      <p><strong>What you'd see:</strong> steady but low GDP growth, episodic protests that do not overwhelm public order, incremental state-level policy experiments on housing and policing. Local organizations (mutual-aid, community capital funds) expand but remain under-resourced.</p>
-      <p><strong>Implication:</strong> The country remains governable but brittle — capable of response but not deep reform. State level patwork of rights protection and legal policy.</p>
+      <p><strong>What you'd see:</strong> Steady but low GDP growth, episodic protests that do not overwhelm public order, incremental state-level policy experiments on housing and policing. Local organizations (mutual-aid, community capital funds) expand but remain under-resourced.</p>
+      <p><strong>Implication:</strong> The country remains governable but brittle — capable of response but not deep reform.</p>
 
       <h3>Scenario 2 — Civic Renewal (~30% likelihood, +1σ)</h3>
       <p><strong>Overview:</strong> Civic networks translate energy into durable institutions — participatory councils, worker co-ops, community media — producing a gradual rebuilding of legitimacy at the local and regional levels.</p>
-      <p><strong>What you'd see:</strong> increased civic turnout in local elections, municipal adoption of participatory budgeting, expansion of legally-protected cooperative business forms, new public media cooperatives and regional cross-sector compacts for climate resilience.</p>
-      <p><strong>Implication:</strong> Renewal is patchwork but accumulative — over several election cycles, it shifts national politics by altering who holds local power. Election candidacy extends to progessive politics.</p>
+      <p><strong>What you'd see:</strong> Increased civic turnout in local elections, municipal adoption of participatory budgeting, expansion of legally-protected cooperative business forms, new public media cooperatives and regional cross-sector compacts for climate resilience.</p>
+      <p><strong>Implication:</strong> Renewal is patchwork but accumulative — over several election cycles, it shifts national politics by altering who holds local power. Election candidacy extends to progessive politics, reversing Overton Window drift.</p>
 
       <h3>Scenario 3 — Systemic Fragmentation (~20% likelihood, -1σ)</h3>
       <p><strong>Overview:</strong> A significant economic shock (credit crunch, major bank failure) or a protracted legitimacy crisis sparks regional divergence. Federal coercive responses increase; states adopt diverging policy regimes; civil order becomes localized and brittle.</p>
-      <p><strong>What you'd see:</strong> emergency deployments in major cities, expansion of detention or extraordinary powers, private security growth, larger informal economies, and increased radicalization online and offline.</p>
+      <p><strong>What you'd see:</strong> Emergency deployments in major cities, expansion of detention or extraordinary powers, private security growth, larger informal economies, and increased radicalization online and offline.</p>
       <p><strong>Implication:</strong> Formal institutions persist but their effectiveness and moral authority are deeply impaired. Legal systems, rights protections, and social services become patchwork on a state by state basis rather than nationally coherent.</p>
     
       <div class="callout"><strong>Caveat:</strong> While the model distribution skews optimistically, sensitivity to pessimistic effects is higher. Thus, while overall pessimistic outcomes are less likely, negative shocks have a greater impact on political direction than positive events.</div>
@@ -344,7 +351,7 @@
     </section>
 
     <section id="history">
-      <h2>VIII. Historical Comparisons</h2>
+      <h2>VIII. Selected Historical Comparisons</h2>
 
       <table>
         <thead><tr><th>Case</th><th>Context</th><th>Key Lesson</th></tr></thead>
@@ -359,14 +366,14 @@
         <caption>Comparative cases chosen for analogical plausibility, lessons for civic renewal, and model consistency/validation.</caption>
       </table>
 
-      <p><strong>Synthesis:</strong> Historical cases show that legitimacy erodes gradually and that civic renewal — when it occurs — often precedes institutional reform rather than the other way around. Non-violent movements are effective strategies, but realized material threats (violence/property destruction, witholding labor, boycotts) bring more immediate albeit chaotic adjustments.</p>
+      <p class="callout"><strong>Synthesis:</strong> Historical cases show that legitimacy erodes gradually and that civic renewal — when it occurs — often precedes institutional reform rather than the other way around. Non-violent movements are effective strategies, but realized material threats (violence/property destruction, witholding labor, boycotts) bring more immediate albeit chaotic adjustments.</p>
     </section>
 
     <section id="conclusion">
       <h2>IX. Conclusion — Where We Go From Here</h2>
 
       <p>The United States is not on a cliff; it is on a narrowing ridge. The next decade will ask whether civic practice can be rebuilt faster than institutional capture solidifies. Small, sustained practices — mutual aid, local assemblies, cooperative economics, and community media — offer the most reliable path toward a durable, democratic future that is resiliant to fractured and/or coercive governance. Consider evangelizing local and state election participation while communicating the importance of party processes (such as primaries) and judicial selections.
-        Political engagement, whether electoral or local action, is key for kickstarting a democratic renewal. </p>
+        Political engagement, whether manifsted as electoral energy, local action, or civil resistance, is key for kickstarting a democratic renewal.</p>
 
       <p class="callout"><strong>Final thought:</strong> Democracy is not voting in periodic elections, it is a continual craft. It is learned through repeated, shared tasks: running meetings, distributing food, teaching civics, and holding officials accountable. If citizens reclaim that craft, institutions will follow; if not, the forms of democracy may remain while the substance fades. Each of us must maintain our own political futures.</p>
     </section>

@@ -104,18 +104,19 @@
 
       <h3>Process (concise, replicable)</h3>
       <ol>
-        <li><strong>Data aggregation:</strong> Public datasets (economic indicators, trust surveys), major reporting, and policy briefs were compiled and interactively fed into a guided LLM session. Sources spanned ideological perspectives to minimize single-source/viewpoint bias.</li>
+        <li><strong>Data aggregation:</strong> Public datasets (economic indicators, trust surveys), major reporting, and policy briefs were compiled and interactively fed into a human-guided LLM session. Sources spanned ideological perspectives to minimize single-source bias.</li>
         <li><strong>Signal extraction:</strong> The LLM summarized recurring themes (e.g., information fragmentation, debt risk, civic mutual aid, cyclical patterns), highlighting leading and lagging indicators. Historical comparisons were used to provide context for data inputs.</li>
         <li><strong>Base Index:</strong> An experimental index was created to average indicators across four pillars: trust, participation, adaptability, and equity. This transforms qualitative inputs into a simple numerical output as a "democratic health bar".</li>
         <li><strong>Model formation:</strong> This index was used to form a probabalistic model by connecting an index value to a grounded narrative, which is analyzed for its approximate likelihood. This model assumes a normal distribution of outcomes across index values.</li>
         <li><strong>Scenario construction:</strong> Three coherent trajectories were generated with each representing a mean, +1 standard deviation, and -1 standard deviation projection (baseline, optimistic, pessimistic, respectively) from the probabalistic model.</li>
         <li><strong>Validation & calibration:</strong> Outputs were checked for internal consistency, analogical fit (see section VIII: Historical Comparisons), and sensitivity to key variables (consumer credit, protest intensity, media consolidation, etc.).</li>
-        <li><strong>Iterative refinement:</strong> Narrative and analogical inconsistencies defined information gaps to feed back into step one. Full process repeated until narrative fit distance dropped below a qualitative threshold.</li>
+        <li><strong>Iterative refinement:</strong> Narrative and analogical inconsistencies defined information gaps counterfactual research as new data to aggregate. Steps one through seven repeated until quantatative narrative fit distance dropped below a qualitative threshold.</li>
         <li><strong>Interpretive synthesis:</strong> Final narrative emphasizes leverage points — what citizens and governments can realistically do now — as well as the major forces likely to constrain and influence outcomes.</li>
-        <li><strong>Report Generation:</strong> This report was generated from the same interactive LLM session, specified to be in the style of a think tank release in HTML format. The LLM's base output was then manually adjusted for content specificity and readability.</li>
+        <li><strong>Report Generation:</strong> This report was generated from the same interactive LLM session, specified to be in the style of a think tank release in HTML format. The LLM's raw output was then manually adjusted with human context and meta-content not available
+        to the LLM due to inherent limitations.</li>
       </ol>
 
-      <p class="small"><strong>Note:</strong> the LLM was used as a research assistant, synthesis tool, and report generator only; factual claims should be verified against primary sources for operational decision-making.</p>
+      <p class="small"><strong>Note:</strong> the LLM was used as a research assistant, synthesis tool, and report generator only; factual claims should be verified against primary sources for operational decision-making. Human modifications to this final report were minimally invasive, ~95% of content remains original LLM output.</p>
     </section>
 
     <section id="context">
@@ -130,7 +131,7 @@
         <li><strong>Civic atomization:</strong> Declining intermediaries (local media, unions, churches, clubs) reduced durable sites of public deliberation and practice.</li>
       </ul>
 
-      <p class="callout"><strong>Implication:</strong> The U.S. currently has high coordination capacity (technology, logistics, fiscal levers) but low public legitimacy — a recipe for efficient enforcement without broad consent.</p>
+      <p class="callout"><strong>Implication:</strong> The U.S. currently has high coordination capacity (technology, logistics, fiscal levers) but low public legitimacy regardless of political alignment — a recipe for efficient enforcement without broad consent.</p>
     </section>
 
     <section id="conditions">
@@ -193,7 +194,7 @@
       </table>
 
       <p>These conditions create simultaneous pressures: mobilized publics with limited electoral leverage, and institutions with significant enforcement capacity but decreasing civic legitimacy. Legtimacy crises span ideological perspectives but differ in root causes and solutions, impeding meaningful national change. Epistemic breakdown is a core impediment while uncertainty about economic, cultural and environmental futures heightens stakes both perceived and real.</p>
-    </section>
+   </section>
 
     <section id="inertia">
       <h2>V. The Inertial Forces: Why the System Resists Reform</h2>
@@ -301,10 +302,16 @@
       <h3>Scenario 3 — Systemic Fragmentation (~20% likelihood, -1σ)</h3>
       <p><strong>Overview:</strong> A significant economic shock (credit crunch, major bank failure) or a protracted legitimacy crisis sparks regional divergence. Federal coercive responses increase; states adopt diverging policy regimes; civil order becomes localized and brittle.</p>
       <p><strong>What you'd see:</strong> Emergency deployments in major cities, expansion of detention or extraordinary powers, private security growth, larger informal economies, and increased radicalization online and offline.</p>
-      <p><strong>Implication:</strong> Formal institutions persist but their effectiveness and moral authority are deeply impaired. Legal systems, rights protections, and social services become patchwork on a state by state basis rather than nationally coherent.</p>
+      <p><strong>Implication:</strong> Formal institutions persist but their effectiveness and moral authority are deeply impaired. Increasing conflicts between state and federal legal policy.
     
       <div class="callout"><strong>Caveat:</strong> While the model distribution skews optimistically, sensitivity to pessimistic effects is higher. Thus, while overall pessimistic outcomes are less likely, negative shocks have a greater impact on political direction than positive events.</div>
 
+      <h3>Shared Themes</h3>
+        <p>Legal systems, rights protections, social services, and cultural norms become patchwork on a state by state basis rather than nationally coherent. Courts
+        and lawsuits are an increasing form of governance from State vs. Federal legal battles. Immediate reform is unlikely, 
+        while accumulative reform (in both democratic and autocratic directions) with chaotic adjustments is expected. Key indicators to monitor:
+        civic participation, domestic migration, consumer credit, and court decisions.
+        </p>
     </section>
 
     <section id="pathways">
@@ -367,6 +374,12 @@
       </table>
 
       <p class="callout"><strong>Synthesis:</strong> Historical cases show that legitimacy erodes gradually and that civic renewal — when it occurs — often precedes institutional reform rather than the other way around. Non-violent movements are effective strategies, but realized material threats (violence/property destruction, witholding labor, boycotts) bring more immediate albeit chaotic adjustments.</p>
+      <h3>Model Relevance</h3>
+      <p>Two core assumptions of this project are "similar historical conditions produce similar outcomes, following cyclical patterns" and "the strength of LLMs in text analysis can generate reasonable 'quantatative' outputs from narrative inputs".
+        A few historical periods were suggested for initial exploration, but ultimate selection was done by the LLM to close information gaps with grounded research. LLM driven research was directed to prioritize modern over ancient history with the expectation of use as a comparative baseline in model formation.
+        More periods were selected than presented here, many of which were black-boxed within the modelling process. These are just the ones chosen by the LLM for inclusion during the report generation step.
+      </p>
+
     </section>
 
     <section id="conclusion">

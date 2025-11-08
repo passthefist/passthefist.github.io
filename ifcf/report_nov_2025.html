@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institute for Civil Futures - Civic Flourishing Assessment: November 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        header {
+            border-bottom: 3px solid #2c5282;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #2c5282;
+            font-size: 1.8em;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .subtitle {
+            color: #4a5568;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+        
+        .date {
+            color: #718096;
+            font-size: 0.95em;
+        }
+        
+        h2 {
+            color: #2c5282;
+            font-size: 1.5em;
+            margin: 30px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        h3 {
+            color: #2d3748;
+            font-size: 1.2em;
+            margin: 25px 0 12px 0;
+        }
+        
+        h4 {
+            color: #4a5568;
+            font-size: 1.05em;
+            margin: 20px 0 10px 0;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #2d3748;
+        }
+        
+        p.caption {
+            color: #4a5568;
+            font-size: .75em;
+        }
+
+        .disclosure {
+            background: #fff5e6;
+            border-left: 4px solid #ed8936;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        
+        .disclosure h3 {
+            color: #c05621;
+            margin-top: 0;
+        }
+        
+        .dashboard {
+            background: #edf2f7;
+            border-left: 4px solid #4299e1;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        
+        .dashboard h3 {
+            color: #2c5282;
+            margin-top: 0;
+        }
+
+        div.flex-col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        div.flex-row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .flex-row.row-1-2 > * {
+            flex: 2 1 0px;
+            min-width: 300px;
+        }
+
+        .flex-row.row-1-2 > *:first-child{
+            flex: 1 1 0px;
+            min-width: 300px;
+        }
+
+        div.flex-row > * {
+            flex: 1 1 0px;
+            margin-right: 7px;
+            min-width: 300px;
+        }
+
+        div.flex-row > *:last-child {
+            margin-right: 0px;
+        }
+        
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .metric-card {
+            background: white;
+            padding: 15px;
+            border-radius: 4px;
+            border: 1px solid #cbd5e0;
+        }
+        
+        .metric-label {
+            font-size: 0.85em;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+        
+        .metric-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #2c5282;
+        }
+        
+        .metric-context {
+            font-size: 0.9em;
+            color: #4a5568;
+            margin-top: 5px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9em;
+        }
+        
+        th {
+            background: #2c5282;
+            color: white;
+            padding: 12px 8px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 10px 8px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        tr:hover {
+            background: #f7fafc;
+        }
+        
+        .highlight-row {
+            background: #ebf8ff;
+            font-weight: 600;
+        }
+        
+        .nadir-row {
+            background: #fff5f5;
+        }
+        
+        .peak-row {
+            background: #f0fff4;
+        }
+        
+        ul, ol {
+            margin: 15px 0 15px 25px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            color: #2d3748;
+        }
+        
+        .scenario-box {
+            border: 2px solid #cbd5e0;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .scenario-box h4 {
+            margin-top: 0;
+            color: #2c5282;
+        }
+        
+        .warning {
+            background: #fff5f5;
+            border-left: 4px solid #f56565;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .success {
+            background: #f0fff4;
+            border-left: 4px solid #48bb78;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .info {
+            background: #ebf8ff;
+            border-left: 4px solid #4299e1;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #e2e8f0;
+            font-size: 0.9em;
+            color: #718096;
+            text-align: center;
+        }
+        
+        strong {
+            color: #2d3748;
+        }
+        
+        em {
+            color: #4a5568;
+        }
+        
+        .toc {
+            background: #f7fafc;
+            padding: 20px;
+            padding-top: 0px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+        
+        .toc ul {
+            list-style: none;
+            margin: 10px 0 0 0;
+        }
+        
+        .toc li {
+            margin: 8px 0;
+        }
+        
+        .toc a {
+            color: #2c5282;
+            text-decoration: none;
+        }
+        
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Institute for Civil Futures</h1>
+            <div class="subtitle">Civic Flourishing Assessment: United States</div>
+            <div class="date">November 2025 (Abridged Report)</div>
+        </header>
+        <div class="flex-row row-1-2">
+        <div class="toc">
+            <h3>Contents</h3>
+            <ul>
+                <li><a href="#summary">Executive Summary</a></li>
+                <li><a href="#disclosure">Methodological Disclosure</a></li>
+                <li><a href="#gap">The Capacity-Experience Gap</a></li>
+                <li><a href="#historical">Historical CFI Trajectory</a></li>
+                <li><a href="#indicators">The 11 Indicators</a></li>
+                <li><a href="#monthly">13-Month Trajectory</a></li>
+                <li><a href="#current">Current State Assessment</a></li>
+                <li><a href="#forces">Structural Forces</a></li>
+                <li><a href="#violence">Violence & Resistance</a></li>
+                <li><a href="#scenarios">Three Scenarios (2025-2027)</a></li>
+                <li><a href="#action">What Individuals Can Do</a></li>
+                <li><a href="#lessons">Historical Lessons</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
+            </ul>
+        </div>
+        <div class="dashboard">
+            <h3>Current State (November 2025)</h3>
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-label">Institutional Capacity</div>
+                    <div class="metric-value">74/100</div>
+                    <div class="metric-context">Near historic peak</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Individual Experience</div>
+                    <div class="metric-value">48/100</div>
+                    <div class="metric-context">Deeply strained</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Capacity-Experience Gap</div>
+                    <div class="metric-value">-26</div>
+                    <div class="metric-context">Record high</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Composite CFI</div>
+                    <div class="metric-value">61/100</div>
+                    <div class="metric-context">7 below 1999 peak</div>
+                </div>
+            </div>
+            <p>The United States exhibits a dangerous paradox: system <strong>capacity</strong> (infrastructure, GDP, technology) operates at 74/100 (near historic peak), while lived <strong>experience</strong> (affordability, trust, community) languishes at 48/100. This 26-point gap between what the system can provide and what people actually receive is the largest in modern American history.</p>
+
+        </div>
+        </div>
+        <section id="summary">
+            <h2>Executive Summary</h2>
+
+
+            <div class="flex-row">
+            <div class="success">
+                <h4>What's Working</h4>
+                <ul>
+                    <li><strong>No Kings movement:</strong> 5-6.5M sustained participants (approaching 3.5% transformation threshold of 11.7M)</li>
+                    <li>Violent crime at 359/100k (lowest since 1969, murder down 14%)</li>
+                    <li>Overdose deaths reversed -27% (largest drop ever: 111k→87k)</li>
+                    <li>Teen mental health improving (depression 18.1%→15.4%, suicidal ideation 12.3%→10.1%)</li>
+                    <li>Renewable energy surpassed coal for first time (solar 8×, wind 2×)</li>
+                    <li>GDP resilient (3.8% growth, unemployment 4.3%)</li>
+                </ul>
+            </div>
+
+            <div class="warning">
+                <h4>What's Failing</h4>
+                <ul>
+                    <li><strong>Social trust 36</strong> (just 6 points above cooperation collapse at 30, touched threshold in October)</li>
+                    <li>Housing unaffordable in 42% of counties (up from 12% in 2018)</li>
+                    <li>Youth collective hope 47% (3 points below 50% sustainability threshold)</li>
+                    <li>Friend time collapsed -56% since 2008 (6.5→4.0 hrs/week)</li>
+                    <li>Union density 9.9% record low despite organizing surge (3,286 elections, 74% win rate)</li>
+                    <li>Climate disasters $101-134B first half 2025 alone (2-2.5× historical average)</li>
+                </ul>
+            </div>
+            </div>
+
+            <p><strong>Structural Reality:</strong> High civic energy (protests, mutual aid, organizing reaching 5-6.5M sustained) paired with low institutional coherence (federal trust 33% vs local 72%, court defiance in 1/3 of cases, anti-antifa executive order). System can absorb shocks but cannot translate political energy into national reform.</p>
+
+            <h3>Near-Term Outlook (2025-2027)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Scenario</th>
+                        <th>Probability</th>
+                        <th>Essence</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Managed Stagnation</strong></td>
+                        <td>~45%</td>
+                        <td>Local experiments grow, national gridlock persists, trust near collapse but doesn't breach, youth emigration 500k-750k/year</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Civic Renewal</strong></td>
+                        <td>~25%</td>
+                        <td>No Kings crosses 3.5% threshold, organizing scales, cooperatives/land trusts expand, trust stabilizes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Systemic Stress</strong></td>
+                        <td>~30%</td>
+                        <td>Recession or legitimacy crisis triggers regional divergence, coercion increases, trust breaches collapse threshold</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>Bottom Line:</strong> The United States is on a narrowing ridge, not a cliff edge. Whether civic practice rebuilds faster than institutional capture solidifies will determine the next decade. The capacity exists. The question is organized human action.</p>
+        </section>
+
+        <section id="disclosure">
+            <div class="disclosure">
+                <h3>Methodological Disclosure</h3>
+                <p><strong>This report is an experimental application of AI-assisted civic analysis.</strong></p>
+                <ul>
+                    <li><strong>Research:</strong> Large language model (Claude, Anthropic) conducted data searches and synthesis</li>
+                    <li><strong>Content:</strong> ~90% LLM-generated; ~10% human editing and direction</li>
+                    <li><strong>Model:</strong> LLM independently chose indicators, weights, and relationships/formulas with minor human input</li> 
+                    <li>
+                        <strong>Framework:</strong> Civic Flourishing Index (CFI) converts qualitative assessments to numerical scales (0-100)
+                        for analytical comparisons—these are structured judgments, not statistical measurements
+                    </li>
+                    <li><strong>Think of CFI scores as "grades"</strong> (like A/B/C) that organize complex information, not precise metrics</li>
+                </ul>
+                <p><strong>Appropriate uses:</strong> Comparative analysis, pattern recognition, discussion framework, LLM narrative generation</p>
+                <p><strong>Inappropriate uses:</strong> Precise forecasting, financial decisions, citation as validated metric</p>
+                <p><strong>For operational decisions, verify all claims against primary sources.</strong> This should inform discussion, not replace independent research.</p>
+            </div>
+        </section>
+
+        <section id="gap">
+            <h2>The Capacity-Experience Gap</h2>
+            
+            <p>Historical pattern shows the <strong>size of the gap predicts instability</strong> better than overall scores:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Era</th>
+                        <th>Capacity</th>
+                        <th>Experience</th>
+                        <th>Gap</th>
+                        <th>Stability Context</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1960s</strong></td>
+                        <td>68</td>
+                        <td>56</td>
+                        <td>12</td>
+                        <td>Stable: Trust 70%, shared prosperity, strong unions</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1990s</strong></td>
+                        <td>78</td>
+                        <td>62</td>
+                        <td>16</td>
+                        <td>Moderate: Inequality rising but prosperity broad</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2019</strong></td>
+                        <td>76</td>
+                        <td>50</td>
+                        <td>26</td>
+                        <td>Fragile: Strong economy, trust collapse 17%</td>
+                    </tr>
+                    <tr class="nadir-row">
+                        <td><strong>2021</strong></td>
+                        <td>66</td>
+                        <td>38</td>
+                        <td>28</td>
+                        <td>Breakdown: Jan 6, COVID, modern nadir</td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td><strong>Nov 2025</strong></td>
+                        <td>74</td>
+                        <td>48</td>
+                        <td>26</td>
+                        <td>Brittle: Capacity recovered, experience stagnant</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>Key Insight:</strong> A society with score 65 and 10-point gap is MORE stable than one with score 68 and 26-point gap. Gap = system works but not for most people = political crisis space.</p>
+
+            <h3>Why Gaps Emerge</h3>
+            <ol>
+                <li><strong>Structural Inertia:</strong> Corporate policy capture ($4.5B lobbying annually), media concentration (journalism down 78.5% since 1990s), institutional conservatism, market discipline vetoing bold policy</li>
+                <li><strong>Inequality as Master Variable:</strong> When Gini >45 sustained (US above since ~2005), gains concentrate at top, capacity doesn't translate broadly</li>
+                <li><strong>Trust Collapse:</strong> Federal trust 33% vs 70% in 1960s creates cooperation failure, system functions but feels illegitimate</li>
+                <li><strong>Time Poverty:</strong> Wage stagnation reduces capacity for democratic participation</li>
+            </ol>
+        </section>
+
+        <section id="historical">
+            <h2>Historical CFI Trajectory (1900-2025)</h2>
+            
+            <p>Understanding where we are requires knowing where we've been:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>CFI</th>
+                        <th>Cap</th>
+                        <th>Exp</th>
+                        <th>Gap</th>
+                        <th>Key Context</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1900</td>
+                        <td>35</td>
+                        <td>42</td>
+                        <td>28</td>
+                        <td>14</td>
+                        <td>Jim Crow, 56% poverty, no women's suffrage</td>
+                    </tr>
+                    <tr>
+                        <td>1933</td>
+                        <td>35</td>
+                        <td>40</td>
+                        <td>30</td>
+                        <td>10</td>
+                        <td>Great Depression nadir</td>
+                    </tr>
+                    <tr>
+                        <td>1960</td>
+                        <td>62</td>
+                        <td>68</td>
+                        <td>56</td>
+                        <td>12</td>
+                        <td>Civil Rights era, trust 70%, Gini 38.6</td>
+                    </tr>
+                    <tr>
+                        <td>1973</td>
+                        <td>64</td>
+                        <td>72</td>
+                        <td>56</td>
+                        <td>16</td>
+                        <td>Real wage peak, Great Society</td>
+                    </tr>
+                    <tr class="peak-row">
+                        <td>1999</td>
+                        <td>69</td>
+                        <td>78</td>
+                        <td>60</td>
+                        <td>18</td>
+                        <td>Dot-com peak, youth hope 71%</td>
+                    </tr>
+                    <tr>
+                        <td>2008</td>
+                        <td>59</td>
+                        <td>70</td>
+                        <td>48</td>
+                        <td>22</td>
+                        <td>Financial collapse begins</td>
+                    </tr>
+                    <tr>
+                        <td>2019</td>
+                        <td>63</td>
+                        <td>76</td>
+                        <td>50</td>
+                        <td>26</td>
+                        <td>Pre-COVID, trust 17%</td>
+                    </tr>
+                    <tr class="nadir-row">
+                        <td>2021</td>
+                        <td>52</td>
+                        <td>66</td>
+                        <td>38</td>
+                        <td>28</td>
+                        <td>Jan 6 + COVID, modern nadir</td>
+                    </tr>
+                    <tr>
+                        <td>2024</td>
+                        <td>59</td>
+                        <td>73</td>
+                        <td>45</td>
+                        <td>28</td>
+                        <td>Partial recovery, Trump re-elected</td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td><strong>Nov 2025</strong></td>
+                        <td><strong>61</strong></td>
+                        <td><strong>74</strong></td>
+                        <td><strong>48</strong></td>
+                        <td><strong>26</strong></td>
+                        <td><strong>Post-shutdown, fragile equilibrium</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>Pattern:</strong> US reached modern peak in 1999 (CFI 69), declined through 2000s-2010s, collapsed 2020-2021 (52), partially recovered but remains 8 points below peak with wider gap (26 vs 18).</p>
+        </section>
+
+        <section id="indicators">
+            <h2>The 11 Indicators: Current Assessment</h2>
+            
+            <p>CFI aggregates 11 weighted indicators, each scored on capacity (what system can provide) and experience (what people receive):</p>
+
+            <div class="flex-col">
+                <div class="flex-row">
+                    <div class="scenario-box">
+                        <h4>1. Material Foundation (Weight: 18%)</h4>
+                        <p><strong>What it measures:</strong> Economic security, housing affordability, wage adequacy</p>
+                        <p><strong>Current:</strong> Capacity 82 (GDP 3.8%, unemployment 4.3%) | Experience 48 (housing unaffordable 42% counties) | Gap 34 (RECORD)</p>
+                        <p><strong>Trend:</strong> Capacity stable, experience declining</p>
+                    </div>
+                
+
+                    <div class="scenario-box">
+                        <h4>2. National Institutional Function (Weight: 15%)</h4>
+                        <p><strong>What it measures:</strong> Democratic systems, rule of law, institutional responsiveness</p>
+                        <p><strong>Current:</strong> Capacity 63 (elections conducted, courts operational) | Experience 43 (federal trust 33%, court defiance 1/3 cases) | Gap 20</p>
+                        <p><strong>Trend:</strong> Both declining</p>
+                    </div>
+                </div>
+                <div class="flex-row">
+                    <div class="scenario-box">
+                        <h4>3. Community Resilience & Participation (Weight: 13%)</h4>
+                        <p><strong>What it measures:</strong> Social capital, civic engagement, local organizing</p>
+                        <p><strong>Current:</strong> Capacity 56 | Experience 42 (friend time 4hrs/week, local trust 72%) | Gap 14</p>
+                        <p><strong>Trend:</strong> Experience slowly declining (friend time collapse)</p>
+                    </div>
+
+                    <div class="scenario-box">
+                        <h4>4. Equality & Justice (Weight: 13%)</h4>
+                        <p><strong>What it measures:</strong> Rights protections, crime levels, disparities, incarceration</p>
+                        <p><strong>Current:</strong> Capacity 61 | Experience 53 (crime 359/100k record low BUT deportations, ICE 510 abuse reports) | Gap 8 (smallest)</p>
+                        <p><strong>Trend:</strong> Mixed (crime improving, targeted enforcement increasing)</p>
+                    </div>
+                </div>
+                <div class="flex-row">
+                    <div class="scenario-box">
+                        <h4>5. Structural Capacity (Weight: 11%)</h4>
+                        <p><strong>What it measures:</strong> Healthcare systems, education access, ecological security</p>
+                        <p><strong>Current:</strong> Capacity 77 (uninsured 8.2% record low) | Experience 67 (climate disasters $101-134B first half 2025) | Gap 10</p>
+                        <p><strong>Trend:</strong> Healthcare improving, climate impacts worsening</p>
+                    </div>
+
+                    <div class="scenario-box">
+                        <h4>6. Innovation & Adaptation (Weight: 9%)</h4>
+                        <p><strong>What it measures:</strong> R&D capacity, technology development, adaptive capacity</p>
+                        <p><strong>Current:</strong> Capacity 90 (R&D $900B, AI boom) | Experience 70 (top 20% capture 85% gains) | Gap 20</p>
+                        <p><strong>Trend:</strong> Capacity rising rapidly, experience rising slowly (concentration)</p>
+                    </div>
+                </div>
+                <div class="flex-row">
+                    <div class="scenario-box">
+                        <h4>7. Social Trust (Weight: 10%)</h4>
+                        <p><strong>What it measures:</strong> Interpersonal trust, institutional trust, polarization</p>
+                        <p><strong>Current:</strong> Capacity 56 | Experience 36 (6pts above collapse threshold 30, touched in October) | Gap 20</p>
+                        <p><strong>Trend:</strong> Both declining, approaching cascade threshold</p>
+                    </div>
+
+                    <div class="scenario-box">
+                        <h4>8. Meaning & Fulfillment (Weight: 9%)</h4>
+                        <p><strong>What it measures:</strong> Time autonomy, arts/nature access, life satisfaction</p>
+                        <p><strong>Current:</strong> Capacity 67 | Experience 49 (73% prioritize work-life but struggle) | Gap 18</p>
+                        <p><strong>Trend:</strong> Experience stagnant</p>
+                    </div>
+                </div>
+                <div class="flex-row">
+                    <div class="scenario-box">
+                        <h4>9. Future Orientation & Hope (Weight: 8%)</h4>
+                        <p><strong>What it measures:</strong> Youth optimism, belief in better future</p>
+                        <p><strong>Current:</strong> Capacity 65 | Experience 52 (youth 47% collective, 75% personal = 28pt divergence) | Gap 13</p>
+                        <p><strong>Trend:</strong> Experience declining (below 50% threshold)</p>
+                    </div>
+
+                    <div class="scenario-box">
+                        <h4>10. Psychological Wellbeing (Weight: 7%)</h4>
+                        <p><strong>What it measures:</strong> Mental health access, stress levels, emotional safety</p>
+                        <p><strong>Current:</strong> Capacity 59 | Experience 52 (stress 49% record, teen improving) | Gap 7 (smallest)</p>
+                        <p><strong>Trend:</strong> Mixed (teen improving, adult stress records)</p>
+                    </div>
+                </div>
+                <div class="flex-row">
+                    <div class="scenario-box">
+                        <h4>11. Collective Self-Determination (Weight: 7%)</h4>
+                        <p><strong>What it measures:</strong> Labor power, community agency, cooperative ownership</p>
+                        <p><strong>Current:</strong> Capacity 46 | Experience 32 (union density 9.9%, No Kings 5-6.5M) | Gap 14</p>
+                        <p><strong>Trend:</strong> Experience slowly rising (organizing surge)</p>
+                    </div>
+                </div>
+            </div>
+
+            <p><strong>Summary Pattern:</strong> Capacity indicators mostly stable/rising (Innovation 90, Material 82, Structural 77). Experience indicators stagnant/declining (Material 48, Meaning 49). Widest gaps: Material (34), Innovation (20), Social Trust (20).</p>
+        </section>
+
+        <section id="monthly">
+            <h2>13-Month Trajectory (November 2024 - November 2025)</h2>
+            
+            <p>Recent dynamics show extreme volatility alongside underlying trends:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>CFI</th>
+                        <th>Cap</th>
+                        <th>Exp</th>
+                        <th>Gap</th>
+                        <th>Trust</th>
+                        <th>Key Events</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nov 2024</td>
+                        <td>58</td>
+                        <td>74</td>
+                        <td>42</td>
+                        <td>32</td>
+                        <td>36</td>
+                        <td>Trump wins, GOP trifecta</td>
+                    </tr>
+                    <tr>
+                        <td>Dec 2024</td>
+                        <td>57</td>
+                        <td>73</td>
+                        <td>41</td>
+                        <td>32</td>
+                        <td>35</td>
+                        <td>Sentiment crashes 74→55.4</td>
+                    </tr>
+                    <tr class="nadir-row">
+                        <td><strong>Jan 2025</strong></td>
+                        <td><strong>53</strong></td>
+                        <td><strong>70</strong></td>
+                        <td><strong>36</strong></td>
+                        <td><strong>34</strong></td>
+                        <td><strong>32</strong></td>
+                        <td><strong>LA WILDFIRES ($53-65B) + Inauguration + deportations 75k/month</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Feb 2025</td>
+                        <td>54</td>
+                        <td>71</td>
+                        <td>37</td>
+                        <td>34</td>
+                        <td>32</td>
+                        <td>ICE raids accelerate, 28 states sue</td>
+                    </tr>
+                    <tr>
+                        <td>Mar 2025</td>
+                        <td>55</td>
+                        <td>72</td>
+                        <td>38</td>
+                        <td>34</td>
+                        <td>33</td>
+                        <td>GDP Q1 3.2%, court defiance emerging</td>
+                    </tr>
+                    <tr>
+                        <td>Apr 2025</td>
+                        <td>56</td>
+                        <td>72</td>
+                        <td>40</td>
+                        <td>32</td>
+                        <td>33</td>
+                        <td>Tariff announcement, organizing spike</td>
+                    </tr>
+                    <tr>
+                        <td>May 2025</td>
+                        <td>57</td>
+                        <td>73</td>
+                        <td>41</td>
+                        <td>32</td>
+                        <td>34</td>
+                        <td>SCOTUS restricts nationwide injunctions</td>
+                    </tr>
+                    <tr>
+                        <td>Jun 2025</td>
+                        <td>58</td>
+                        <td>74</td>
+                        <td>42</td>
+                        <td>32</td>
+                        <td>35</td>
+                        <td><strong>NO KINGS EMERGES (2-5M participants)</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Jul 2025</td>
+                        <td>59</td>
+                        <td>74</td>
+                        <td>44</td>
+                        <td>30</td>
+                        <td>36</td>
+                        <td>Crime 50-yr lows, WaPo court defiance analysis</td>
+                    </tr>
+                    <tr>
+                        <td>Aug 2025</td>
+                        <td>60</td>
+                        <td>75</td>
+                        <td>45</td>
+                        <td>30</td>
+                        <td>36</td>
+                        <td>Sen. Ossoff ICE abuse report (510 cases)</td>
+                    </tr>
+                    <tr class="peak-row">
+                        <td>Sep 2025</td>
+                        <td>61</td>
+                        <td>75</td>
+                        <td>46</td>
+                        <td>29</td>
+                        <td>37</td>
+                        <td>Anti-antifa executive order (Sept 22)</td>
+                    </tr>
+                    <tr class="warning" style="background: #fff5f5;">
+                        <td><strong>Oct 2025</strong></td>
+                        <td><strong>58</strong></td>
+                        <td><strong>73</strong></td>
+                        <td><strong>43</strong></td>
+                        <td><strong>30</strong></td>
+                        <td><strong>30</strong></td>
+                        <td><strong>SHUTDOWN + NO KINGS 5-6.5M, Trust→30 cascade</strong></td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td><strong>Nov 2025</strong></td>
+                        <td><strong>61</strong></td>
+                        <td><strong>74</strong></td>
+                        <td><strong>48</strong></td>
+                        <td><strong>26</strong></td>
+                        <td><strong>36</strong></td>
+                        <td><strong>Courts restore SNAP, Trust 30→36, HRW ICE report</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info">
+                <h4>Three-Phase Pattern Revealed</h4>
+                <ol>
+                    <li><strong>Collapse (Nov 2024 - Jan 2025):</strong> CFI 58→53 (-5 points in 2 months). January 2025 was effective "mini-2021" combining LA wildfires ($53-65B, world's most expensive), inauguration shock, and deportation surge.</li>
+                    <li><strong>Recovery (Jan - Sep 2025):</strong> CFI 53→61 (+8 points in 8 months). Driven by economic resilience, No Kings emergence (2-5M→5-6.5M), crime falling to record lows.</li>
+                    <li><strong>Volatile Equilibrium (Sep - Nov 2025):</strong> CFI 61→58→61 (±3 oscillation). October shutdown touched trust cascade threshold (30), recovered but left permanent scars.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="current">
+            <h2>Current State Assessment</h2>
+
+            <h3>October 2025 Shutdown: Fragility Revealed</h3>
+            
+            <p>Three-week SNAP/WIC suspension (25M affected) demonstrated system dynamics:</p>
+            <div class="flex-row">
+                <div class="warning">
+                    <h4>Immediate Impact</h4>
+                    <ul>
+                        <li>Trust dropped to <strong>30 exactly</strong> (cascade threshold where cooperation becomes impossible)</li>
+                        <li>Federal trust fell to 28, collective self-determination scored 20 (lowest ever)</li>
+                        <li>800,000 federal workers furloughed</li>
+                    </ul>
+                </div>
+                <div class="success">
+                    <h4>Resolution</h4>
+                    <ul>
+                        <li>Federal courts ordered restoration within 4 weeks</li>
+                        <li>Trust recovered to 36 BUT NOT to pre-crisis baseline 44</li>
+                        <li>Judge McConnell ruled admin violated "clear and unambiguous" order</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h4>Lessons</h4>
+            <ol>
+                <li>Trust currently <strong>6 points from collapse</strong> (30 = cooperation impossible)</li>
+                <li>Judicial independence holding (for now) but tested to breaking point</li>
+                <li>Rapid shocks absorbed faster than slow erosion</li>
+                <li>Each crisis leaves <strong>permanent scars</strong> even when "resolved"</li>
+            </ol>
+
+            <h3>No Kings Movement: A Central Dynamic</h3>
+            <div class="info">
+                <p><strong>Scale:</strong> Protests with 5-6.5M sustained participants (October 2025), 43% public support (14.4M Americans)</p>
+                <p><strong>Growth:</strong> June 2-5M → October 5-6.5M (2,700+ events)</p>
+                <p><strong>Character:</strong> Cross-ideological constitutional defense (Democrats, independents 40%, constitutional conservatives, libertarians)</p>
+                <p><em><strong>Threshold proximity:</strong> 3.5% of population = 11.7M sustained needed for high transformation probability. Current: 1.5-1.8% with 43% support suggests 5-6M additional could mobilize. 3.5% is consistent historical threshold for meaningful political change.</p></em>
+            </div>
+            <p><strong>Anti-Antifa Targeting:</strong> September 22 executive order designated antifa "domestic terrorist organization." October 8 AG Bondi vowed to "destroy entire organization," considering RICO charges. Chilling effect: Conflation of No Kings with terrorism, but movement continued growing through October.</p>
+
+            <h3>Climate Catastrophe Unfolding</h3>
+
+            <ul>
+                <li><strong>January LA Wildfires:</strong> $53-65B damages, 30 deaths, 15,000-17,000 structures destroyed (most expensive wildfire in world history)</li>
+                <li><strong>First half 2025 total:</strong> $101-134B disasters (15 billion-dollar events, 2-2.5× historical average)</li>
+                <li><strong>Wildfires:</strong> 4 million acres burned by August (44,470 fires), season starting earlier and lasting longer</li>
+                <li><strong>Pattern:</strong> Climate regime shift, not incremental change</li>
+                <li><em><strong>Response Weakened:</strong> NOAA defunded, dataset quality reduced and ignored; Federal assistance reduced</li></em>
+            </ul>
+
+            <h3>ICE Rights Violations Documented</h3>
+
+            <ul>
+                <li><strong>Sen. Ossoff investigation (Aug 2025):</strong> 510 credible abuse reports (41 physical/sexual abuse, 18 child mistreatment)</li>
+                <li><strong>Human Rights Watch Report (Nov 2025):</strong> LA raids June-Sept "violent campaign that violates human rights on vast scale"</li>
+                <li><strong>Deaths:</strong> 15 in ICE custody FY2025 (highest since 2020)</li>
+                <li><strong>Detention:</strong> 59,000+ (6-year high)</li>
+                <li><em><strong>Oversight gutted:</strong> Immigration Detention Ombudsman laid off, CRCL staff eliminated</li></em>
+            </ul>
+
+            <h3>Court Defiance Pattern</h3>
+
+            <p><strong>Washington Post analysis (July 2025):</strong> Trump admin accused of flouting courts in <strong>1/3 of 160+ lawsuits</strong>. Pattern: "Legalistic non-compliance"—creative reinterpretation, partial compliance (named plaintiffs only), delay tactics, closed-door discussions of whether to comply.</p>
+
+            <p><strong>Result:</strong> Institutions holding under extreme pressure but systematically tested. Courts can force compliance (October SNAP) <em>but admin exploits every ambiguity and tests limits of enforcement.</em></p>
+        </section>
+
+        <section id="forces">
+            <h2>Structural Forces Constraining Change</h2>
+
+            <h3>Corporate Capture</h3>
+            <p>Continuous influence through lobbying ($4.5B annually), campaign finance, revolving door. <strong>Tech oligarchy</strong> particularly powerful: 36+ Musk/Thiel network employees now in federal agencies, $6B+ in contracts since January 2025.</p>
+
+            <h3>Media Collapse</h3>
+            <p>Journalism employment 400,000 (1990s) → 86,000 (2024), <strong>-78.5%</strong>. Result: 70M Americans in "news deserts," personalized feeds replace shared reality. Incentives favor virality over deliberation.</p>
+
+            <h3>Institutional Conservatism</h3>
+            <p>Agencies measure success through stability, making reform difficult even when politically possible.</p>
+
+            <h3>Market Discipline</h3>
+            <p>Financial markets function as veto on "risky" policies, narrowing imagination before debate begins.</p>
+
+            <h3>Time Poverty</h3>
+            <p>Wage stagnation, work demands, childcare costs reduce capacity for sustained democratic engagement.</p>
+
+            <p><strong>Net Effect:</strong> High civic energy exists (No Kings 5-6.5M, protests, organizing) but struggles to overcome structural barriers. Local experiments succeed (cooperatives, participatory budgeting) but scaling requires overcoming multiple veto points simultaneously.</p>
+        </section>
+
+        <section id="violence">
+            <h2>Violence & Resistance Landscape</h2>
+
+            <h3>Violence Risk (2025-2027)</h3>
+
+            <div class="scenario-box">
+                <h4>State Violence</h4>
+                <p><strong>Current:</strong> Deportations 1-2M/year, ICE 510 documented abuse reports, militarized responses sporadic</p>
+                <p><strong>Trajectory:</strong> If trust breaches <30: enforcement intensity increases (30-40% probability)</p>
+                <p><strong>Constraint:</strong> Military/law enforcement cultural resistance to illegal orders remains (2020 precedent)</p>
+            </div>
+
+            <div class="scenario-box">
+                <h4>Lone Actor Violence</h4>
+                <p><strong>Projection:</strong> 10-20 politically-motivated attacks annually (2025-2027)</p>
+                <p><strong>Drivers:</strong> Affective polarization 67.5% ("opponents are immoral"), support for political violence 33-36% (vs 8% in 2017)</p>
+                <p><strong>Pattern:</strong> Peak around 2026 midterms, 2028 presidential election. Episodic not sustained, dozens annually not hundreds.</p>
+            </div>
+
+            <div class="scenario-box">
+                <h4>Organized Violence</h4>
+                <p><strong>Current risk:</strong> Low-moderate (2-6 incidents/year)</p>
+                <p><strong>Escalation conditions:</strong> (1) Trust <30, (2) Unemployment >10%, (3) Contested election, (4) Federal-state armed confrontation</p>
+                <p><strong>Probability all four through 2027:</strong> <15%</p>
+                <p><strong>Likely form:</strong> Localized standoffs (days-weeks), hundreds to low thousands of participants, NOT civil war (requires >100k sustained combatants)</p>
+            </div>
+
+            <p><strong>Assessment:</strong> Violence increasingly functions as political signal, not reform strategy. Amplifies polarization, normalizes coercion, sustains contested authority without restoring trust.</p>
+
+            <h3>Nonviolent Resistance</h3>
+
+            <div class="success">
+                <h4>Historical Success Rates</h4>
+                <p><strong>Nonviolent campaigns:</strong> 53% success rate (Chenoweth, 323 campaigns 1900-2006)</p>
+                <p><strong>Violent campaigns:</strong> 26% success rate</p>
+                <p><strong>Mechanisms:</strong> Broader participation, regime defections (security forces less willing to repress nonviolent movements), international legitimacy</p>
+            </div>
+
+            <h4>Critical Mass Threshold</h4>
+            <p><strong>3.5% sustained participation</strong> = high success likelihood = <strong>11.7M Americans</strong></p>
+            <p><strong>Current:</strong> No Kings 5-6.5M (1.5-1.8%), plus 1-2M other progressive sustained, 1.5-2.5M conservative sustained = <strong>8-10M total, approaching threshold</strong></p>
+
+            <h4>Most Effective Leverage Points (Ranked)</h4>
+            <ol>
+                <li><strong>Labor strikes:</strong> Direct economic power, 74% win rate on union elections, 3,286 petitions in 2024</li>
+                <li><strong>Electoral mobilization:</strong> If elections remain legitimate (turnout campaigns, voter registration)</li>
+                <li><strong>Mutual aid networks:</strong> Builds trust and demonstrates alternatives, slow but durable</li>
+                <li><strong>Sustained boycotts:</strong> 10%+ participation for 6+ months can shift corporate behavior</li>
+                <li><strong>Mass protests:</strong> Declining effectiveness (media collapse, gridlock) but valuable for coalition-building</li>
+            </ol>
+        </section>
+
+        <section id="scenarios">
+            <h2>Three Scenarios (2025-2027)</h2>
+
+            <div class="scenario-box">
+                <h3>Scenario 1: Managed Stagnation (~45%)</h3>
+                <p><strong>Mechanism:</strong> No Kings sustains 6-7M but plateaus, 2026 midterms produce narrow divided government, institutions hold but don't reform, climate/economic shocks absorbed but accumulate</p>
+                
+                <h4>What You'd See</h4>
+                <ul>
+                    <li>Local experiments (cooperatives, mutual aid, participatory budgeting) proliferate but remain fragmented</li>
+                    <li>National institutions retain authority without trust</li>
+                    <li>Divided government after 2026 midterms produces gridlock</li>
+                    <li>Trust oscillates 32-38 near cascade, doesn't breach but stays fragile</li>
+                    <li>Youth emigration 500k-750k/year (brain drain beginning)</li>
+                    <li>Climate disasters $120-150B/year absorbed but not addressed structurally</li>
+                </ul>
+
+                <h4>November 2027 Outcome</h4>
+                <p><strong>CFI: 59</strong> (Capacity 72, Experience 46, Gap 26)</p>
+                <p><strong>Trust: 33</strong> (3 points above cascade, stable but fragile)</p>
+                <p><strong>Youth Hope: 45%</strong> (5 points below threshold)</p>
+                <p><strong>Implication:</strong> Governable but brittle—system can respond to shocks but not address structural problems. "Slow-motion Japan" trajectory.</p>
+            </div>
+
+            <div class="scenario-box">
+                <h3>Scenario 2: Civic Renewal (~25%)</h3>
+                <p><strong>Mechanism:</strong> No Kings crosses 3.5% threshold (11-12M), 2026 midterms flip House, Supreme Court strikes Schedule F, organizing energy translates to durable institutions</p>
+
+                <h4>What You'd See</h4>
+                <ul>
+                    <li>No Kings grows to 9-10M by June 2026, crosses 11-12M by 2027</li>
+                    <li>2026 midterms: Democrats +18 House seats, constitutional coalition forms</li>
+                    <li>Worker cooperatives scale (650+ verified), community land trusts secure 75,000+ housing units</li>
+                    <li>Participatory budgeting spreads to 180+ cities (from 50)</li>
+                    <li>Union density 9.9%→11.5% (sectoral bargaining pilots succeed)</li>
+                    <li>Trust stabilizes 38-42 (moving away from cascade)</li>
+                </ul>
+
+                <h4>November 2027 Outcome</h4>
+                <p><strong>CFI: 67</strong> (Capacity 75, Experience 59, Gap 16)</p>
+                <p><strong>Trust: 42</strong> (12 points above cascade)</p>
+                <p><strong>Youth Hope: 55%</strong> (above sustainability threshold)</p>
+                <p><strong>Implication:</strong> Patchwork renewal accumulates over 5-10 years, local power shifts enable national breakthrough. Historical parallel: Progressive Era, Civil Rights movement.</p>
+            </div>
+
+            <div class="scenario-box">
+                <h3>Scenario 3: Systemic Stress (~30%)</h3>
+                <p><strong>Mechanism:</strong> Trust breaches <30 threshold, recession triggers economic crisis, No Kings suppressed via anti-antifa conflation, Supreme Court enables executive overreach</p>
+
+                <h4>What You'd See</h4>
+                <ul>
+                    <li>Supreme Court upholds Schedule F fully (Feb 2026), 50,000 federal workers purged</li>
+                    <li>Recession: Unemployment 4.3%→8.5%, inadequate stimulus (gridlock)</li>
+                    <li>No Kings collapses under prosecution pressure (RICO investigations), drops to <2M</li>
+                    <li>Trust breaches 30 (cascade), cooperation breakdown visible</li>
+                    <li>Regional divergence accelerates (blue states CFI 62-65, red states 48-52)</li>
+                    <li>Youth emigration 1.2M/year (crisis level), brain drain</li>
+                    <li>Organized violence 20+ incidents/year (up from 2-6 baseline)</li>
+                </ul>
+
+                <h4>November 2027 Outcome</h4>
+                <p><strong>CFI: 51</strong> (Capacity 66, Experience 36, Gap 30 RECORD)</p>
+                <p><strong>Trust: 28</strong> (2 points BELOW cascade)</p>
+                <p><strong>Youth Hope: 35%</strong> (13 points below threshold)</p>
+                <p><strong>Implication:</strong> Cascade triggered, cooperation breakdown, inadequate crisis response, regional divergence, violence increases, youth exodus, partial state failure.</p>
+            </div>
+
+            <div class="info">
+                <h4>Most Likely: Composite Reality</h4>
+                <p>Real outcome will blend elements from all scenarios. Current trajectory closest to <strong>Managed Stagnation</strong> with elements of both Renewal (No Kings approaching threshold) and Stress (trust near cascade, climate catastrophic).</p>
+                <p><strong>Key decision points:</strong> 2026 midterms (Nov 5), Schedule F Supreme Court case (Q1 2026), economic trajectory (recession risk 40%), No Kings growth trajectory (sustain/grow vs plateau/decline)</p>
+            </div>
+        </section>
+
+        <section id="action">
+            <h2>What Individuals Can Do</h2>
+
+            <p><strong>Democracy is continual craft learned through repeated shared tasks</strong>—running meetings, distributing resources, teaching civics, holding officials accountable.</p>
+
+            <h3>Tier 1: Foundational (0-2 hours/month)</h3>
+            <ol>
+                <li><strong>Vote every election</strong> — Primaries + generals + local (school board, city council, state legislature)</li>
+                <li><strong>Build emergency fund</strong> — 3-6 months if possible (40% recession risk 2027)</li>
+                <li><strong>Diversify news</strong> — Local + national + international; support quality journalism $5-15/month</li>
+                <li><strong>Strengthen local ties</strong> — One community event monthly (friend time needs rebuilding from 4→6+ hrs/week)</li>
+                <li><strong>Know your rights</strong> — Protest rights, police interaction, documentation (especially for vulnerable communities)</li>
+            </ol>
+
+            <h3>Tier 2: Capacity-Building (2-5 hours/month)</h3>
+            <ol start="6">
+                <li><strong>Join one organization</strong> — Union, tenant association, mutual aid, No Kings (atomized individuals cannot resist organized power)</li>
+                <li><strong>Learn useful skills</strong> — First aid, conflict mediation, food preservation, basic repair, digital security</li>
+                <li><strong>Engage local government</strong> — Attend meetings (local trust 72% vs federal 33%, responsiveness higher)</li>
+                <li><strong>Practice mutual aid</strong> — Childcare exchange, tool sharing, skill teaching (rebuilds social capital)</li>
+                <li><strong>Redirect finances locally</strong> — Credit unions, cooperatives, local businesses (small-scale economic democracy)</li>
+            </ol>
+
+            <h3>Tier 3: Movement-Building (5-10+ hours/month)</h3>
+            <ol start="11">
+                <li><strong>Union organizing</strong> — If employed, start/support unionization (74% win rate 2024, most effective economic leverage tool)</li>
+                <li><strong>Tenant organizing</strong> — If renting, form association with 5-10 neighbors minimum (housing unaffordable 42% counties)</li>
+                <li><strong>Electoral organizing</strong> — Campaign volunteering, voter registration, poll monitoring (protects election integrity)</li>
+                <li><strong>Sustained protest</strong> — Commit 6+ months on specific issue (movements fail from dropout, not insufficient peak intensity)</li>
+                <li><strong>Cooperative development</strong> — Start/join worker cooperative, housing cooperative, community land trust (demonstrates alternatives)</li>
+            </ol>
+
+            <div class="warning">
+                <h4>Strategic Errors to Avoid</h4>
+                <ul>
+                    <li><strong>Isolated individualism:</strong> Personal resilience without collective ties leaves you vulnerable</li>
+                    <li><strong>Purity politics:</strong> Rejecting coalitions; 11.7M threshold unreachable within single faction</li>
+                    <li><strong>Performance over power:</strong> Social media alone insufficient; requires organization, coordination, sustained action</li>
+                    <li><strong>Premature violence:</strong> Violent resistance 26% success vs nonviolent 53%; violence enables repression</li>
+                    <li><strong>Exhaustion:</strong> Unsustainable commitment leads to dropout; pace for marathon not sprint</li>
+                    <li><strong>Despair or denial:</strong> Both paralyze action; situation serious but capacity exists, transformation possible</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="lessons">
+            <h2>Historical Lessons</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Case</th>
+                        <th>Lesson</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Weimar Germany (1920s-30s)</strong></td>
+                        <td>Legitimacy vacuums enable authoritarian actors. Civic renewal must precede institutional collapse, not follow it.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Italy "Years of Lead" (1970s)</strong></td>
+                        <td>Societies stabilize when civic life maintains routine despite violence. Ordinary institutions continuing function preserves recovery foundation.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Late Roman Republic</strong></td>
+                        <td>Democratic forms outlast democratic substance; erosion gradual then sudden. Institutions can function while civic content vanishes.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>U.S. Gilded Age → Progressive Era</strong></td>
+                        <td>Bottom-up organizing (local) enables national transformation when political opportunity opens. Settlement houses, cooperatives, municipal socialism preceded federal reforms.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>U.S. Civil Rights Movement</strong></td>
+                        <td>Sustained civic organization produces durable reform. Multiple tactics required (electoral, legal, protest, economic boycott). Inside-outside strategy essential.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>Synthesis:</strong> Legitimacy erodes gradually. Civic renewal typically precedes institutional reform. Nonviolent movements more effective long-term (53% vs 26%), but material threats (strikes, boycotts) bring immediate adjustments. Window between "legitimate grievance" and "authoritarian opening" is narrow—organized civic practice must fill that space.</p>
+        </section>
+
+        <section id="conclusion">
+            <h2>Conclusion</h2>
+
+            <p>The United States in late 2025: <strong>high capacity, low translation, contested legitimacy, localized resilience coexisting in brittle equilibrium.</strong></p>
+
+            <p>Three futures compete:</p>
+
+            <ul>
+                <li><strong>Stagnation (45%):</strong> Local innovation, national gridlock, gap widens to 26, trust near collapse at 33</li>
+                <li><strong>Renewal (25%):</strong> No Kings crosses threshold (11-12M), organizing scales, cooperatives/land trusts grow, trust stabilizes at 42, CFI rises to 67</li>
+                <li><strong>Stress (30%):</strong> Recession + legitimacy crisis trigger regional divergence, coercion increases, trust breaches collapse threshold at 28, CFI falls to 51</li>
+            </ul>
+
+            <p><strong>None is destiny.</strong> The question is what organized civic practice we build—individually and collectively—in the 630 days to 2026 midterms and 1,095 days to 2028 election.</p>
+
+            <div class="info" style="font-size: 1.1em; padding: 25px; margin: 30px 0;">
+                <p style="margin: 0;"><strong>The window narrows. The capacity remains. The choice is ours.</strong></p>
+            </div>
+
+            <p>Democracy is craft, not spectacle. Learned through repeated tasks: running meetings, teaching neighbors, holding officials accountable, organizing workplaces, feeding communities during crisis, maintaining hope while acknowledging reality.</p>
+
+            <p style="font-size: 1.15em; font-weight: 600; margin-top: 25px;">If we reclaim democratic craft—locally, persistently, in coalition—institutions adapt. If not, forms persist while substance fades.</p>
+
+            <p style="font-size: 1.15em; font-weight: 600; margin-top: 15px; color: #2c5282;">The analysis documents trajectory. Human action determines outcome.</p>
+        </section>
+
+        <section id="sources">
+            <h2>Data Sources</h2>
+            
+            <p>This assessment draws on publicly available data from:</p>
+
+            <h3>U.S. Government</h3>
+            <p>Bureau of Labor Statistics (employment, wages), Census Bureau (demographics, housing), Centers for Disease Control (health, mortality), Federal Bureau of Investigation (crime statistics), Federal Reserve (economic data)</p>
+
+            <h3>International Organizations</h3>
+            <p>Organisation for Economic Co-operation and Development (OECD comparative data), United Nations (development indicators), World Bank (global statistics)</p>
+
+            <h3>Research Institutions</h3>
+            <p>Gallup (trust, wellbeing surveys), Pew Research Center (civic engagement, political attitudes), Democracy Fund (civic health indicators)</p>
+
+            <h3>Academic Sources</h3>
+            <p>Putnam (social capital research), Chenoweth & Stephan (civil resistance effectiveness data, "Why Civil Resistance Works"), various peer-reviewed studies on inequality, trust, and civic participation</p>
+
+            <h3>Investigative Reporting</h3>
+            <p>Washington Post (court defiance analysis, July 2025), Human Rights Watch (ICE abuse report, November 2025), Sen. Ossoff investigation (ICE rights violations, August 2025)</p>
+
+            <p><strong>All specific factual claims can be verified against these primary sources. For operational decision-making, independent verification strongly recommended.</strong></p>
+        </section>
+
+        <section id="about">
+            <h2>About This Project</h2>
+
+            <p><strong>Institute for Civil Futures</strong> is an experimental initiative exploring AI-assisted civic analysis. We develop frameworks for assessing societal health, test LLM research methodologies, and maintain transparency about capabilities and limitations.</p>
+
+            <p><strong>We are NOT:</strong> Traditional think tank, academic institution with peer review, advocacy organization, established authority, or substitute for independent expertise.</p>
+
+            <p><strong>This report:</strong> Experimental LLM application (~90% AI-generated, ~10% human-edited), structured framework for qualitative judgments, contribution to public discourse not final word.</p>
+
+            <p><strong>Contact:</strong> research@civilfutures.org</p>
+
+            <p><strong>Acknowledgment:</strong> This work builds on extensive civic research traditions. The synthesis is experimental; the reality it describes is the product of millions of daily choices about how to live together.</p>
+        </section>
+
+        <div class="footer">
+            <p><strong>Institute for Civil Futures</strong></p>
+            <p>Experimental Civic Analysis — December 2025</p>
+            <p style="margin-top: 15px; font-style: italic;">"If we reclaim democratic craft—locally, persistently, in coalition—institutions adapt. If not, forms persist while substance fades."</p>
+        </div>
+    </div>
+</body>
+</html>
+                        

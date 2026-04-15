@@ -611,7 +611,11 @@ span.cursor-blink {
 }
 
 #testimonials .profilepic.bex {
-  background-image: url('../img/headshot.jpg');
+  background-image: url('../img/bex_headshot.jfif');
+}
+
+#testimonials .profilepic.sid {
+  background-image: url('../img/sid_headshot.jfif');
 }
 
 #ads {

@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2nd Grade Civics & Community — Robin Goetz</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Fraunces:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #fdf8f0;
+  --cream-dark: #ede3d0;
+
+  --teal-deep: #14645a;
+  --teal-mid: #1a7a6e;
+  --teal-light: #a8d8d2;
+  --teal-pale: #e0f2f0;
+
+  --coral-deep: #c45a3a;
+  --coral-mid: #e07a5f;
+  --coral-light: #f2b5a0;
+  --coral-pale: #fde8e2;
+
+  --lilac-deep: #7b5ea7;
+  --lilac-mid: #b59fd8;
+  --lilac-light: #d8ccee;
+  --lilac-pale: #f0ecf8;
+
+  --dreamsicle-deep: #d4782a;
+  --dreamsicle-mid: #f0a65a;
+  --dreamsicle-light: #f9cfa0;
+  --dreamsicle-pale: #fef0e0;
+
+  --ink: #2a2018;
+  --ink-mid: #5a4a38;
+  --ink-light: #8a7a68;
+
+  --shadow-soft: 0 4px 20px rgba(42, 32, 24, 0.1);
+  --shadow-lifted: 0 8px 32px rgba(42, 32, 24, 0.15);
+  --shadow-paper: 2px 4px 12px rgba(42, 32, 24, 0.12);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* subtle paper grain overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+/* ── NAV ── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--cream-dark);
+  border-bottom: 2px solid var(--teal-light);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow-soft);
+}
+
+.nav-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--teal-deep);
+  line-height: 1.2;
+}
+
+.nav-title span {
+  display: block;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--ink-light);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nav-tpt {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  background: var(--teal-mid);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: background 0.2s ease, transform 0.2s ease;
+  box-shadow: var(--shadow-paper);
+}
+
+.nav-tpt:hover {
+  background: var(--teal-deep);
+  transform: translateY(-1px);
+}
+
+.nav-tpt svg {
+  width: 18px;
+  height: 18px;
+  fill: white;
+}
+
+/* ── MAIN ── */
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 3rem 0rem 5rem;
+}
+
+/* ── SECTION SPACING ── */
+.section {
+  margin-bottom: 2rem;
+}
+
+/* ── INTRO ── */
+.intro {
+  text-align: center;
+  align-self: start;
+  padding: 0rem 1rem;
+}
+
+.intro .two-col {
+  grid-template-columns: 3fr 3fr;
+}
+
+.intro .left-col {
+    align-self: start;
+}
+
+.intro-eyebrow {
+  display: inline-block;
+  background: var(--dreamsicle-pale);
+  color: var(--dreamsicle-deep);
+  border: 1.5px solid var(--dreamsicle-light);
+  border-radius: 2rem;
+  padding: 0.3rem 1rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.intro h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--teal-deep);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.intro h1 em {
+  font-style: italic;
+  color: var(--coral-deep);
+}
+
+.intro-lead {
+  font-size: 1.1rem;
+  color: var(--ink-mid);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+/* ── CAROUSEL ── */
+.carousel-wrap {
+  position: relative;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-stack {
+  position: relative;
+  object-fit: contain;
+  width: 400px;
+  min-height: 230px;
+}
+
+.stack-card {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lifted);
+  cursor: pointer;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease;
+  user-select: none;
+  background-color: white;
+}
+
+.stack-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.stack-card:nth-child(1) { transform: rotate(-3deg) translateY(6px); z-index: 1; }
+.stack-card:nth-child(2) { transform: rotate(-1.5deg) translateY(3px); z-index: 2; }
+.stack-card:nth-child(3) { transform: rotate(0.5deg); z-index: 3; }
+.stack-card:nth-child(4) { transform: rotate(2deg); z-index: 4; opacity: 0; }
+
+.stack-card.top { z-index: 10; transform: rotate(0deg) scale(1.02); }
+.stack-card.going-back {
+  animation: cardCycle 0.5s ease forwards;
+}
+
+@keyframes cardCycle {
+  0% { transform: rotate(0deg) scale(1.02); opacity: 1; z-index: 10; }
+  50% { transform: rotate(-8deg) translateX(-40px) translateY(20px) scale(0.9); opacity: 0.3; }
+  100% { transform: rotate(-3deg) translateY(6px); opacity: 1; z-index: 1; }
+}
+
+.carousel-btn {
+  position: absolute;
+  bottom: -3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.75rem;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--teal-light);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.carousel-dot.active {
+  background: var(--teal-deep);
+  transform: scale(1.3);
+}
+
+.carousel-hint {
+  position: absolute;
+  bottom: -5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.72rem;
+  color: var(--ink-light);
+  white-space: nowrap;
+}
+
+/* ── DESCRIPTION ── */
+.description-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-soft);
+  border: 1.5px solid var(--cream-dark);
+  position: relative;
+}
+
+.description-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--teal-mid), var(--coral-mid), var(--lilac-mid), var(--dreamsicle-mid));
+  border-radius: 16px 16px 0 0;
+}
+
+.description-card h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.4rem;
+  color: var(--teal-deep);
+  margin-bottom: 1rem;
+}
+
+.description-card p {
+  color: var(--ink-mid);
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.description-card p:last-child { margin-bottom: 0; }
+
+.description-card strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.meta-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1.5px solid var(--cream-dark);
+}
+
+.chip {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 2rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.chip-teal { background: var(--teal-pale); color: var(--teal-deep); border: 1px solid var(--teal-light); }
+.chip-coral { background: var(--coral-pale); color: var(--coral-deep); border: 1px solid var(--coral-light); }
+.chip-lilac { background: var(--lilac-pale); color: var(--lilac-deep); border: 1px solid var(--lilac-light); }
+.chip-dreamsicle { background: var(--dreamsicle-pale); color: var(--dreamsicle-deep); border: 1px solid var(--dreamsicle-light); }
+
+/* ── TWO COLUMN ── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.two-col.flip { direction: rtl; }
+.two-col.flip > * { direction: ltr; }
+
+.puzzle-img-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.puzzle-img {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-lifted);
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.puzzle-img-wrap:nth-child(odd) .puzzle-img,
+.puzzle-img-wrap .puzzle-img.tilt-left {
+  transform: rotate(-3.5deg);
+}
+
+.puzzle-img-wrap .puzzle-img.tilt-right {
+  transform: rotate(2.5deg);
+}
+
+.puzzle-img-wrap:hover .puzzle-img {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.col-text h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.3rem;
+  color: var(--coral-deep);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.col-text p {
+  color: var(--ink-mid);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+/* ── DECORATIVE DIVIDER ── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 3rem 0;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, var(--teal-light), transparent);
+}
+
+.divider-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--dreamsicle-pale);
+  border: 1.5px solid var(--dreamsicle-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* ── CLOSING ── */
+.closing {
+  background: linear-gradient(135deg, var(--teal-pale) 0%, var(--lilac-pale) 100%);
+  border-radius: 20px;
+  padding: 2.5rem;
+  border: 1.5px solid var(--teal-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.closing::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--lilac-light);
+  opacity: 0.3;
+}
+
+.closing h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.4rem;
+  color: var(--teal-deep);
+  margin-bottom: 1rem;
+}
+
+.closing p {
+  color: var(--ink-mid);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.closing p:last-child { margin-bottom: 0; }
+
+.cta-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--teal-mid);
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-paper);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn-primary:hover {
+  background: var(--teal-deep);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  color: var(--teal-deep);
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: 1.5px solid var(--teal-light);
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.btn-secondary:hover {
+  border-color: var(--teal-mid);
+  transform: translateY(-2px);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+  nav { padding: 0.75rem 1rem; }
+  main { padding: 2rem 1rem 4rem; }
+  .two-col { grid-template-columns: 1fr; }
+  .two-col.flip { direction: ltr; }
+  .carousel-wrap { height: 340px; }
+  .card-stack { width: 240px; height: 300px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-title">
+    <span>Robin Goetz</span>
+    2nd Grade Civics &amp; Community
+  </div>
+  <a class="nav-tpt" href="https://www.teacherspayteachers.com/Product/2nd-Grade-Civics-Community-SEL-Informed-16060422" target="_blank" rel="noopener">
+    <img style="background-color: white; width: 20px; height:20px; border-radius: 13px;" src="https://static1.teacherspayteachers.com/tpt-frontend/releases/production/current/a3a2f97a4b27a10f4e68.ico">
+    <!-- <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg> -->
+    View on TPT
+  </a>
+</nav>
+
+<main>
+
+  <!-- INTRO -->
+  <section class="section intro">
+        <h1>Civics &amp; <em>Community</em></h1>
+
+        <!-- <div class="intro-eyebrow">SEL Informed · 2nd Grade · Free</div> -->
+        <p class="intro-lead">
+            An introduction to civics curriculum intended to teach second graders the basics of civics through community building.            They'll answer big questions for their own classrooms: How can we keep rules fair? What does it mean to be a good citizen? And what happens when we take care of each other?
+        </p>
+         <!-- CAROUSEL -->
+        <section class="section" style="padding-bottom: 5rem;">
+            <div class="carousel-wrap">
+            <div class="card-stack" id="cardStack">
+                <div class="stack-card">
+                <img src="https://ecdn.teacherspayteachers.com/thumbitem/2nd-Grade-Civics-Community-SEL-Informed--16060422-1776083848/original-16060422-4.jpg" alt="Curriculum preview 4">
+                </div>
+                <div class="stack-card">
+                <img src="https://ecdn.teacherspayteachers.com/thumbitem/2nd-Grade-Civics-Community-SEL-Informed--16060422-1776083848/original-16060422-3.jpg" alt="Curriculum preview 3">
+                </div>
+                <div class="stack-card">
+                <img src="https://ecdn.teacherspayteachers.com/thumbitem/2nd-Grade-Civics-Community-SEL-Informed--16060422-1776083848/original-16060422-2.jpg" alt="Curriculum preview 2">
+                </div>
+                <div class="stack-card top">
+                <img src="https://ecdn.teacherspayteachers.com/thumbitem/2nd-Grade-Civics-Community-SEL-Informed--16060422-1776083848/original-16060422-1.jpg" alt="Curriculum preview 1">
+                </div>
+            </div>
+            <div class="carousel-btn" id="carouselDots"></div>
+            <div class="carousel-hint">click to flip through</div>
+            </div>
+        </section>
+    </div>
+  </section>
+
+ 
+
+  <!-- DESCRIPTION -->
+  <section class="section">
+    <div class="description-card">
+      <h2>About this curriculum</h2>
+      <p><strong>This is an SEL informed civics curriculum with a focus on community.</strong></p>
+      <p>Kids learn why we have rules, rights and responsibilities — and how their actions can impact their communities. They will discover what it means to be a good citizen and create their own "classroom constitution": a list of rules framed as promises to each other, to help protect the rights of everyone in the class.</p>
+      <p>The core running metaphor throughout the curriculum is the idea that every community has a heart at the center, and we are the puzzle pieces that make up that heart. When our pieces fit together, the heart is strong. If they don't — because we're not following rules, fulfilling responsibilities, or hurting each other — the heart gets weak. But working together, good deeds, and apologies can always fix the heart.</p>
+      <p>Each unit, students add what they learned to their own puzzle piece, which they use at the end of the curriculum to sign their classroom constitution — creating their own heart with a piece from each student.</p>
+      <p>This curriculum meets Social Sciences standards for Illinois and Chicago Public Schools, SY 2025–2026.</p>
+      <div class="meta-chips">
+        <span class="chip chip-teal">2nd Grade</span>
+        <span class="chip chip-coral">Civics &amp; Government</span>
+        <span class="chip chip-lilac">Social Emotional Learning</span>
+        <span class="chip chip-dreamsicle">50 Pages</span>
+        <span class="chip chip-teal">1 Month</span>
+        <span class="chip chip-coral">Answer Key Included</span>
+        <span class="chip chip-dreamsicle">Free</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-icon">🧩</div>
+    <div class="divider-line"></div>
+  </div>
+
+  <!-- TWO COL: image left, text right -->
+  <section class="section">
+    <div class="two-col">
+      <div class="puzzle-img-wrap">
+        <img class="puzzle-img tilt-left"
+          src="https://ecdn.teacherspayteachers.com/thumbitem/2nd-Grade-Civics-Community-SEL-Informed--16060422-1776083848/original-16060422-2.jpg"
+          alt="Curriculum page example">
+      </div>
+      <div class="col-text">
+        <h3>The heart of the classroom</h3>
+        <p>[ Placeholder — add your own notes here about the puzzle piece metaphor, how the classroom constitution works in practice, or what surprised you about how kids responded to this framework. ]</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-icon">💛</div>
+    <div class="divider-line"></div>
+  </div>
+
+  <!-- TWO COL: text left, image right -->
+  <section class="section">
+    <div class="two-col flip">
+      <div class="puzzle-img-wrap">
+        <img class="puzzle-img tilt-right"
+          src="https://ecdn.teacherspayteachers.com/thumbitem/2nd-Grade-Civics-Community-SEL-Informed--16060422-1776083848/original-16060422-3.jpg"
+          alt="Curriculum page example">
+      </div>
+      <div class="col-text">
+        <h3>Rules as promises</h3>
+        <p>[ Placeholder — notes on the pedagogy behind framing rules as promises rather than restrictions, and how that shift in language landed with 7-year-olds. ]</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-icon">✨</div>
+    <div class="divider-line"></div>
+  </div>
+
+  <!-- CLOSING -->
+  <section class="section closing">
+    <h2>A note from the author</h2>
+    <p>[ Placeholder — your closing thoughts, what inspired this curriculum, how it connects to your work at Funston, the food sovereignty coalition, or whatever feels right to say here. This is the place to be a person, not a product listing. ]</p>
+    <p>[ You could also note that it's free, that you welcome feedback, that you're continuing to develop it, etc. ]</p>
+    <div class="cta-row">
+      <a class="btn-primary" href="https://www.teacherspayteachers.com/Product/2nd-Grade-Civics-Community-SEL-Informed-16060422" target="_blank" rel="noopener">
+        Download free on TPT →
+      </a>
+      <a class="btn-secondary" href="https://www.passthefist.co" target="_blank" rel="noopener">
+        About Robin Goetz
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  const stack = document.getElementById('cardStack');
+  const cards = [...stack.querySelectorAll('.stack-card')];
+  const dotsContainer = document.getElementById('carouselDots');
+  let current = cards.length - 1; // top card index
+
+  // build dots
+  cards.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'carousel-dot' + (i === current ? ' active' : '');
+    dot.setAttribute('aria-label', `Preview ${i + 1}`);
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  function updateDots() {
+    dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  function updateStack() {
+    const n = cards.length;
+    cards.forEach((card, i) => {
+      card.classList.remove('top', 'going-back');
+      const offset = (i - current + n) % n;
+      if (offset === 0) {
+        card.classList.add('top');
+        card.style.zIndex = 10;
+        card.style.transform = 'rotate(0deg) scale(1.02)';
+        card.style.opacity = '1';
+      } else {
+        const pos = offset;
+        const rotations = [-3, -1.5, 0.5, 2];
+        const yOffsets = [6, 3, 0, 0];
+        const idx = Math.min(pos - 1, rotations.length - 1);
+        card.style.zIndex = n - pos;
+        card.style.transform = `rotate(${rotations[idx]}deg) translateY(${yOffsets[idx]}px)`;
+        card.style.opacity = pos > 3 ? '0' : '1';
+      }
+    });
+  }
+
+  function goTo(idx) {
+    current = idx;
+    updateStack();
+    updateDots();
+  }
+
+  function advance() {
+    current = (current + 1) % cards.length;
+    updateStack();
+    updateDots();
+  }
+
+  stack.addEventListener('click', advance);
+
+  // auto-advance
+  let autoTimer = setInterval(advance, 4000);
+  stack.addEventListener('click', () => {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(advance, 4000);
+  });
+</script>
+
+</body>
+</html>
